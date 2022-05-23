@@ -14,10 +14,13 @@ struct MainViewRow: View {
         VStack {
             HStack {
                 Text(shortcutList.title)
+                    .font(.title)
+                    .foregroundColor(.blue)
                 Spacer()
             }
             HStack {
                 Text(shortcutList.description)
+                    .foregroundColor(.gray)
                 Spacer()
             }
         }
