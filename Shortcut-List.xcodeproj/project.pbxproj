@@ -11,6 +11,11 @@
 		E13D2473283BDFE90088E632 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2472283BDFE90088E632 /* ContentView.swift */; };
 		E13D2475283BDFEA0088E632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13D2474283BDFEA0088E632 /* Assets.xcassets */; };
 		E13D2478283BDFEA0088E632 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13D2477283BDFEA0088E632 /* Preview Assets.xcassets */; };
+		E13D2483283BE1EA0088E632 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2482283BE1EA0088E632 /* MainView.swift */; };
+		E13D2485283BE2210088E632 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2484283BE2210088E632 /* MainViewModel.swift */; };
+		E13D2487283BE2500088E632 /* ApplicationURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2486283BE2500088E632 /* ApplicationURL.swift */; };
+		E13D2489283BE2780088E632 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2488283BE2780088E632 /* Data.swift */; };
+		E13D248B283BE29A0088E632 /* ShortcutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D248A283BE29A0088E632 /* ShortcutList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		E13D2472283BDFE90088E632 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E13D2474283BDFEA0088E632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13D2477283BDFEA0088E632 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E13D2482283BE1EA0088E632 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E13D2484283BE2210088E632 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E13D2486283BE2500088E632 /* ApplicationURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationURL.swift; sourceTree = "<group>"; };
+		E13D2488283BE2780088E632 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E13D248A283BE29A0088E632 /* ShortcutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,9 @@
 		E13D246F283BDFE90088E632 /* Shortcut-List */ = {
 			isa = PBXGroup;
 			children = (
+				E13D247E283BE14B0088E632 /* View */,
+				E13D2480283BE15F0088E632 /* ViewModel */,
+				E13D2481283BE1690088E632 /* Model */,
 				E13D2470283BDFE90088E632 /* Shortcut_ListApp.swift */,
 				E13D2472283BDFE90088E632 /* ContentView.swift */,
 				E13D2474283BDFEA0088E632 /* Assets.xcassets */,
@@ -65,6 +78,32 @@
 				E13D2477283BDFEA0088E632 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E13D247E283BE14B0088E632 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E13D2482283BE1EA0088E632 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E13D2480283BE15F0088E632 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E13D2484283BE2210088E632 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E13D2481283BE1690088E632 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E13D2486283BE2500088E632 /* ApplicationURL.swift */,
+				E13D2488283BE2780088E632 /* Data.swift */,
+				E13D248A283BE29A0088E632 /* ShortcutList.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +177,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13D2473283BDFE90088E632 /* ContentView.swift in Sources */,
+				E13D2489283BE2780088E632 /* Data.swift in Sources */,
+				E13D2483283BE1EA0088E632 /* MainView.swift in Sources */,
+				E13D248B283BE29A0088E632 /* ShortcutList.swift in Sources */,
+				E13D2487283BE2500088E632 /* ApplicationURL.swift in Sources */,
 				E13D2471283BDFE90088E632 /* Shortcut_ListApp.swift in Sources */,
+				E13D2485283BE2210088E632 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

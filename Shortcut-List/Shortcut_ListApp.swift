@@ -11,7 +11,8 @@ import SwiftUI
 struct Shortcut_ListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            MainView()
         }
     }
 }
