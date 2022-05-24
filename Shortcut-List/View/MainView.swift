@@ -16,11 +16,11 @@ struct MainView: View {
                 List(viewModel.searchResult) { listItem in
                     MainViewRow(shortcutList: listItem)
                 }
-                .listStyle(.insetGrouped)
+                .listStyle(.plain)
                 .searchable(text: $viewModel.searchText,
                             placement: .navigationBarDrawer(displayMode: .always),
                             prompt: "リスト内検索")
-                .navigationBarTitle("Shortcut List", displayMode: .inline)
+                .navigationTitle("Shortcut List")
                 .navigationBarItems(
                     leading: Button(
                         action: {

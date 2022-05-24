@@ -29,7 +29,7 @@ struct MainViewRow: View {
 
 struct MainViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        MainViewRow(shortcutList: testData[0])
+        MainViewRow(shortcutList: mainViewTestData[0])
             .previewLayout(.sizeThatFits)
     }
 }

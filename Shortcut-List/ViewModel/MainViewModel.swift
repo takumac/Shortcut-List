@@ -9,8 +9,9 @@ import Foundation
 import SwiftUI
 
 class MainViewModel: ObservableObject {
+    // Stored property
     @Published var shortcutLists: [ShortcutList]
-    
+    // Computed property
     @Published var searchText: String = ""
     var searchResult: [ShortcutList] {
         if(searchText.isEmpty) {
@@ -21,6 +22,6 @@ class MainViewModel: ObservableObject {
     }
     
     init() {
-        shortcutLists = testData
+        shortcutLists = mainViewTestData
     }
 }
