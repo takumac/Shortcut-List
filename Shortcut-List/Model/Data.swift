@@ -8,32 +8,32 @@
 import Foundation
 
 let mainViewTestData = [
-    ShortcutList(title: "title1", description: "description1", applicationURLs: [ApplicationURL(url: "url1"), ApplicationURL(url: "url2"), ApplicationURL(url: "url3")]),
-    ShortcutList(title: "title2", description: "description2", applicationURLs: [ApplicationURL(url: "url4"), ApplicationURL(url: "url5"), ApplicationURL(url: "url6")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")]),
-    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(url: "url7"), ApplicationURL(url: "url8"), ApplicationURL(url: "url9")])
+    ShortcutList(title: "title1", description: "description1", applicationURLs: [ApplicationURL(appTitle: "app1", appUrl: "url1"), ApplicationURL(appTitle: "app2", appUrl: "url2"), ApplicationURL(appTitle: "app3", appUrl: "url3")]),
+    ShortcutList(title: "title2", description: "description2", applicationURLs: [ApplicationURL(appTitle: "app4", appUrl: "url4"), ApplicationURL(appTitle: "app5", appUrl: "url5"), ApplicationURL(appTitle: "app6", appUrl: "url6")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")]),
+    ShortcutList(title: "title3", description: "description3", applicationURLs: [ApplicationURL(appTitle: "app7", appUrl: "url7"), ApplicationURL(appTitle: "app8", appUrl: "url8"), ApplicationURL(appTitle: "app9", appUrl: "url9")])
 ]
 
 let createViewTestData = [
-    ApplicationURL(url: "createView url1"),
-    ApplicationURL(url: "createView url2"),
-    ApplicationURL(url: "createView url3"),
-    ApplicationURL(url: "createView url4"),
-    ApplicationURL(url: "createView url5"),
-    ApplicationURL(url: "createView url6"),
-    ApplicationURL(url: "createView url7"),
-    ApplicationURL(url: "createView url8"),
-    ApplicationURL(url: "createView url9"),
-    ApplicationURL(url: "createView url10")
+    ApplicationURL(appTitle: "createView title1", appUrl: "createView url1"),
+    ApplicationURL(appTitle: "createView title2", appUrl: "createView url2"),
+    ApplicationURL(appTitle: "createView title3", appUrl: "createView url3"),
+    ApplicationURL(appTitle: "createView title4", appUrl: "createView url4"),
+    ApplicationURL(appTitle: "createView title5", appUrl: "createView url5")
+]
+
+let listDetailViewTestData = [
+    ApplicationURL(appTitle: "listDetailView title1", appUrl: "listDetailView url1"),
+    ApplicationURL(appTitle: "listDetailView title2", appUrl: "listDetailView url2"),
+    ApplicationURL(appTitle: "listDetailView title3", appUrl: "listDetailView url3"),
+    ApplicationURL(appTitle: "listDetailView title4", appUrl: "listDetailView url4"),
+    ApplicationURL(appTitle: "listDetailView title5", appUrl: "listDetailView url5")
 ]

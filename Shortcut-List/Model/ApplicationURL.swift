@@ -9,9 +9,11 @@ import Foundation
 
 class ApplicationURL: Identifiable {
     var id = UUID()
-    var url: String
+    var appTitle: String
+    var appUrl: String
     
-    init (url: String) {
-        self.url = url
+    init (appTitle: String, appUrl: String) {
+        self.appTitle = appTitle
+        self.appUrl = appUrl
     }
 }

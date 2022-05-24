@@ -1,13 +1,13 @@
 //
-//  CreateListViewRow.swift
+//  ListDetailViewRow.swift
 //  Shortcut-List
 //
-//  Created by Takumi Sakai on 2022/05/24.
+//  Created by Takumi Sakai on 2022/05/25.
 //
 
 import SwiftUI
 
-struct CreateListViewRow: View {
+struct ListDetailViewRow: View {
     var applicationURL: ApplicationURL
     
     var body: some View {
@@ -18,9 +18,9 @@ struct CreateListViewRow: View {
     }
 }
 
-struct CreateListViewRow_Previews: PreviewProvider {
+struct ListDetailViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        CreateListViewRow(applicationURL: createViewTestData[0])
+        ListDetailViewRow(applicationURL: listDetailViewTestData[0])
             .previewLayout(.sizeThatFits)
     }
 }
