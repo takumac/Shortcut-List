@@ -14,29 +14,36 @@ struct MainView: View {
         NavigationView {
             ZStack {
                 List(viewModel.searchResult) { listItem in
-                    MainViewRow(shortcutList: listItem)
+                    NavigationLink(destination: ListDetailView()) {
+                        MainViewRow(shortcutList: listItem)
+                    }
                 }
                 .listStyle(.plain)
                 .searchable(text: $viewModel.searchText,
                             placement: .navigationBarDrawer(displayMode: .always),
                             prompt: "リスト内検索")
                 .navigationTitle("Shortcut List")
-                .navigationBarItems(
-                    leading: Button(
-                        action: {
-                            print("左のボタン押した")
-                            
-                        }) {
-                            Image(systemName: "gearshape.fill")
-                                .foregroundColor(.blue)
-                        },
-                    trailing: Button(
-                        action: {
-                            print("右のボタン押した")
-                            
-                        }) {
-                        Text("編集")
-                    })
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(
+                            action: {
+                                print("左のボタン押した")
+                                
+                            }) {
+                                Image(systemName: "gearshape.fill")
+                                    .foregroundColor(.blue)
+                            }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(
+                            action: {
+                                print("右のボタン押した")
+                                
+                            }) {
+                                Text("編集")
+                            }
+                    }
+                }
                 
                 FloatingButton()
             }
