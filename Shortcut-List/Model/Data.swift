@@ -37,3 +37,11 @@ let listDetailViewTestData = [
     ApplicationURL(appTitle: "listDetailView title4", appUrl: "listDetailView url4"),
     ApplicationURL(appTitle: "listDetailView title5", appUrl: "listDetailView url5")
 ]
+
+let selectAppViewTestData = [
+    ApplicationURL(appTitle: "selectAppView title1", appUrl: "selectAppView url1"),
+    ApplicationURL(appTitle: "selectAppView title2", appUrl: "selectAppView url2"),
+    ApplicationURL(appTitle: "selectAppView title3", appUrl: "selectAppView url3"),
+    ApplicationURL(appTitle: "selectAppView title4", appUrl: "selectAppView url4"),
+    ApplicationURL(appTitle: "selectAppView title5", appUrl: "selectAppView url5")
+]
