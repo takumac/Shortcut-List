@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CreateListView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
     @ObservedObject var viewModel = CreateListViewModel()
     
     var body: some View {
@@ -31,25 +34,29 @@ struct CreateListView: View {
                     .padding(.top)
                     .navigationTitle("新規登録")
                     .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarItems(
-                        leading: Button(
-                            action: {
-                                print("左のボタン押した")
-                                
-                            }) {
-                                Text("キャンセル")
-                            },
-                        trailing: Button(
-                            action: {
-                                print("右のボタン押した")
-                                
-                            }) {
-                            Text("完了")
-                        })
+                    .navigationBarBackButtonHidden(true)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button(
+                                action: {
+                                    dismiss()
+                                }) {
+                                    Text("キャンセル")
+                                }
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(
+                                action: {
+                                    print("右のボタンが押した")
+                                }) {
+                                    Text("完了")
+                                }
+                        }
+                    }
                     
                 }
                 
-                FloatingButton()
+                SelectAppViewPresentedButton()
             }
         }
     }
