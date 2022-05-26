@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct FloatingButton: View {
+struct SelectAppViewPresentedButton: View {
+    @State var isShowingView: Bool = false
+    
     var body: some View {
         VStack {
             Spacer()
             HStack {
                 Spacer()
                 Button(action: {
-                    print("Buttonを押しました")
+                    isShowingView.toggle()
                 }) {
                     Image(systemName: "plus.circle.fill")
                         .font(.system(size: 24))
@@ -25,14 +27,17 @@ struct FloatingButton: View {
                         .shadow(color: .gray, radius: 3, x: 3, y: 3)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 20))
                 }
+                .sheet(isPresented: $isShowingView) {
+                    SelectAppView()
+                }
             }
         }
     }
 }
 
-struct FloatingButton_Previews: PreviewProvider {
+struct SelectAppViewPresentedButton_Previews: PreviewProvider {
     static var previews: some View {
-        FloatingButton()
+        SelectAppViewPresentedButton(isShowingView: false)
             .previewLayout(.sizeThatFits)
     }
 }

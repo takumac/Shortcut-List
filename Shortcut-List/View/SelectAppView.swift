@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-struct SelectAppViwe: View {
+struct SelectAppView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
     @ObservedObject var viewModel = SelectAppViewModel()
     
     var body: some View {
@@ -20,14 +23,17 @@ struct SelectAppViwe: View {
                 .padding(.top)
                 .navigationTitle("アプリを選択")
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationBarItems(
-                    leading: Button(
-                        action: {
-                            print("左のボタン押した")
-                        }) {
-                            Text("キャンセル")
-                        }
-                )
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(
+                            action: {
+                                dismiss()
+                            }) {
+                                Text("キャンセル")
+                            }
+                    }
+                }
             }
         }
     }
@@ -35,6 +41,6 @@ struct SelectAppViwe: View {
 
 struct SelectAppViwe_Previews: PreviewProvider {
     static var previews: some View {
-        SelectAppViwe()
+        SelectAppView()
     }
 }
