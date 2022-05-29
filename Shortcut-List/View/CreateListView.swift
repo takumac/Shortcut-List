@@ -13,6 +13,9 @@ struct CreateListView: View {
     
     @ObservedObject var viewModel = CreateListViewModel()
     
+    @State private var showingCompleteAlert = false
+    @State private var showingCancelAlert = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -39,17 +42,40 @@ struct CreateListView: View {
                         ToolbarItem(placement: .navigationBarLeading) {
                             Button(
                                 action: {
-                                    dismiss()
+                                    self.showingCancelAlert.toggle()
                                 }) {
                                     Text("キャンセル")
+                                }
+                                .alert(isPresented: $showingCancelAlert) {
+                                    Alert(
+                                        title: Text(""),
+                                        message: Text("編集内容を破棄します。\nよろしいですか？"),
+                                        primaryButton: .cancel(Text("キャンセル")) {
+                                            print("キャンセル押された")
+                                        },
+                                        secondaryButton: .destructive(Text("破棄")) {
+                                            print("破棄押された")
+                                            dismiss()
+                                        })
                                 }
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button(
                                 action: {
-                                    print("右のボタンが押した")
+                                    self.showingCompleteAlert.toggle()
                                 }) {
                                     Text("完了")
+                                }
+                                .alert(isPresented: $showingCompleteAlert) {
+                                    Alert(
+                                        title: Text(""),
+                                        message: Text("新規リストとして追加します。\nよろしいですか？"),
+                                        primaryButton: .cancel(Text("キャンセル")) {
+                                            print("キャンセル押された")
+                                        },
+                                        secondaryButton: .default(Text("追加")) {
+                                            print("追加押された")
+                                        })
                                 }
                         }
                     }
