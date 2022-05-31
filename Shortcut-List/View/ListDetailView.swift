@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ListDetailView: View {
     
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var envDismiss
+    @Environment(\.editMode) var envEditMode
     
     @ObservedObject var viewModel = ListDetailViewModel()
     
@@ -25,8 +26,18 @@ struct ListDetailView: View {
                 .padding(.top)
                 .padding(.leading)
                 .padding(.trailing)
-            List(viewModel.applicationURLs) { listItem in
-                ListDetailViewRow(applicationURL: listItem)
+            List {
+                ForEach(viewModel.applicationURLs) { listItem in
+                    ListDetailViewRow(applicationURL: listItem)
+                }
+                .onDelete(perform: envEditMode?.wrappedValue.isEditing == true ? { indexSet in
+                    // TODO: 削除ボタンが押された時の動作を実装する
+                    print("削除ボタン押された")
+                } : nil)
+                .onMove(perform: { indices, newOffset in
+                    // TODO: リストが移動した時の動作を実装する
+                    print("移動ボタン")
+                })
             }
             .listStyle(.plain)
             .padding(.top)
@@ -37,18 +48,29 @@ struct ListDetailView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(
                         action: {
-                            dismiss()
+                            envDismiss()
                         }) {
                             Image(systemName: "arrow.backward")
                         }
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        print("右のボタン押した")
-                    }) {
-                        Text("編集")
-                    }
+                    Button(
+                        action: {
+                            withAnimation() {
+                                if envEditMode?.wrappedValue.isEditing == true {
+                                    envEditMode?.wrappedValue = .inactive
+                                } else {
+                                    envEditMode?.wrappedValue = .active
+                                }
+                            }
+                        }) {
+                            if envEditMode?.wrappedValue.isEditing == true {
+                                Text("完了")
+                            } else {
+                                Text("編集")
+                            }
+                        }
                 }
             }
         }
