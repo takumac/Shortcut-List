@@ -32,11 +32,11 @@ struct ListDetailView: View {
                         ListDetailViewRow(applicationURL: listItem)
                     }
                     .onDelete(perform: envEditMode?.wrappedValue.isEditing == true ? { indexSet in
-                        // TODO: 削除ボタンが押された時の動作を実装する
+                        // TODO: リストの項目の削除ボタンが押された時の動作を実装する
                         print("削除ボタン押された")
                     } : nil)
                     .onMove(perform: { indices, newOffset in
-                        // TODO: リストが移動した時の動作を実装する
+                        // TODO: リストの項目が移動した時の動作を実装する
                         print("移動ボタン")
                     })
                 }
@@ -71,6 +71,7 @@ struct ListDetailView: View {
                                 }
                             }) {
                                 if envEditMode?.wrappedValue.isEditing == true {
+                                    // TODO: リストの項目の編集が完了した時の動作を実装する
                                     Text("完了")
                                 } else {
                                     Text("編集")
