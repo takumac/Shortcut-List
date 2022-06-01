@@ -75,6 +75,7 @@ struct CreateListView: View {
                                         },
                                         secondaryButton: .default(Text("追加")) {
                                             print("追加押された")
+                                            dismiss()
                                         })
                                 }
                         }
