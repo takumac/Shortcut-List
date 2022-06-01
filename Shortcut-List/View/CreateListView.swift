@@ -74,6 +74,7 @@ struct CreateListView: View {
                                             print("キャンセル押された")
                                         },
                                         secondaryButton: .default(Text("追加")) {
+                                            // TODO: 新規リストが作成された時の動作を実装する
                                             print("追加押された")
                                             dismiss()
                                         })
