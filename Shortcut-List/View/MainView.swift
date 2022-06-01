@@ -42,13 +42,18 @@ struct MainView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button(
                             action: {
-                                // TODO: 歯車マークを押した時の動作を実装する
-                                print("左のボタン押した")
+                                withAnimation() {
+                                    // TODO: 歯車マークを押した時の動作を実装する
+                                    print("歯車ボタンを押した")
+                                }
                                 
                             }) {
-                                Image(systemName: "gearshape.fill")
-                                    .foregroundColor(.blue)
+                                if editMode.isEditing == false {
+                                    Image(systemName: "gearshape.fill")
+                                        .foregroundColor(.blue)
+                                }
                             }
+                            .disabled(editMode.isEditing)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(
@@ -70,7 +75,9 @@ struct MainView: View {
                     }
                 }
                 
-                CreateListViewPresentedButton()
+                if editMode.isEditing == false {
+                    CreateListViewPresentedButton()
+                }
             }
             .environment(\.editMode, $editMode)
         }
