@@ -12,6 +12,6 @@ class SelectAppViewModel: ObservableObject {
     @Published var applicationURLs: [ApplicationURL]
     
     init() {
-        self.applicationURLs = selectAppViewTestData
+        self.applicationURLs = ResourceManager.shared.allApplicationURL
     }
 }

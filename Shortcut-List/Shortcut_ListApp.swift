@@ -9,10 +9,17 @@ import SwiftUI
 
 @main
 struct Shortcut_ListApp: App {
+    
     var body: some Scene {
         WindowGroup {
-//            ContentView()
             MainView()
         }
+    }
+    
+    init() {
+        // アプリケーション全体での初期化
+        
+        // JSONファイルからショートカット対象のアプリケーションの情報を取得
+        ResourceManager.shared.decodeAppInfo()
     }
 }

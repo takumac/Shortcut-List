@@ -1,0 +1,10 @@
+[
+    {
+        "app_title" : "写真",
+        "app_url" : "photos-redirect"
+    }, 
+    {
+        "app_title" : "カレンダー",
+        "app_url" : "calshow"
+    }
+]
