@@ -45,6 +45,8 @@ struct MainView: View {
                                 withAnimation() {
                                     // TODO: 歯車マークを押した時の動作を実装する
                                     print("歯車ボタンを押した")
+                                    // TODO: カスタムURLスキームで起動するようのテスト
+                                    viewModel.runApp()
                                 }
                                 
                             }) {
@@ -63,6 +65,8 @@ struct MainView: View {
                                         $editMode.wrappedValue = .inactive
                                     } else {
                                         $editMode.wrappedValue = .active
+                                        // TODO: カスタムURLスキームで起動するようのテスト
+                                        viewModel.runApp2()
                                     }
                                 }
                             }) {

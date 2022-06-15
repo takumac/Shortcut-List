@@ -24,4 +24,18 @@ class MainViewModel: ObservableObject {
     init() {
         shortcutLists = mainViewTestData
     }
+    
+    
+    
+    
+    // TODO:  テスト用に直接アプリのURLを指定して開いてみる
+    var tmpApplicationURL = ApplicationURL(appTitle: "photos", appUrl: "photos-redirect://")
+    func runApp() {
+        tmpApplicationURL.openApp()
+    }
+    var tmpApplicationURL2 = ApplicationURL(appTitle: "calshow", appUrl: "calshow://")
+    func runApp2() {
+        tmpApplicationURL2.openApp()
+    }
+    
 }
