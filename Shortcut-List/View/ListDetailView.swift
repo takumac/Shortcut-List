@@ -12,7 +12,7 @@ struct ListDetailView: View {
     @Environment(\.dismiss) var envDismiss
     @Environment(\.editMode) var envEditMode
     
-    @ObservedObject var viewModel = ListDetailViewModel()
+    @ObservedObject var viewModel: ListDetailViewModel
     
     var body: some View {
         ZStack {
@@ -90,6 +90,6 @@ struct ListDetailView: View {
 
 struct ListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListDetailView()
+        ListDetailView(viewModel: ListDetailViewModel(shortcutList: listDetailViewTestData))
     }
 }

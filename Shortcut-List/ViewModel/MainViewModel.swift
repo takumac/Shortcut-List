@@ -22,7 +22,7 @@ class MainViewModel: ObservableObject {
     }
     
     init() {
-        shortcutLists = mainViewTestData
+        shortcutLists = testData
     }
     
     

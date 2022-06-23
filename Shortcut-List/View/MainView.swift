@@ -20,7 +20,7 @@ struct MainView: View {
             ZStack {
                 List {
                     ForEach(viewModel.searchResult) { listItem in
-                        NavigationLink(destination: ListDetailView()) {
+                        NavigationLink(destination: ListDetailView(viewModel: ListDetailViewModel(shortcutList: listItem))) {
                             MainViewRow(shortcutList: listItem)
                         }
                     }

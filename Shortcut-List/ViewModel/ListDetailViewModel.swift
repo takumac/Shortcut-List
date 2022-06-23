@@ -14,9 +14,9 @@ class ListDetailViewModel: ObservableObject {
     @Published var description: String
     @Published var applicationURLs: [ApplicationURL]
     
-    init() {
-        self.title = "テスト用タイトル"
-        self.description = "テスト用補足説明"
-        self.applicationURLs = listDetailViewTestData
+    init(shortcutList: ShortcutList) {
+        self.title = shortcutList.title
+        self.description = shortcutList.description
+        self.applicationURLs = shortcutList.applicationURLs
     }
 }
