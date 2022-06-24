@@ -22,7 +22,7 @@ class ApplicationURL: Identifiable, Codable {
     }
     
     func openApp() {
-        guard let url = URL(string: appUrl) else {
+        guard let url = URL(string: appUrl + "://") else {
             // TODO: URLオブジェクト作成に失敗した時の処理を実装する
             return
         }

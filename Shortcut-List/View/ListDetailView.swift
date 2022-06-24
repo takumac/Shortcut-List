@@ -30,6 +30,9 @@ struct ListDetailView: View {
                 List {
                     ForEach(viewModel.applicationURLs) { listItem in
                         ListDetailViewRow(applicationURL: listItem)
+                            .onTapGesture {
+                                viewModel.tapApplication(applicationURL: listItem)
+                            }
                     }
                     .onDelete(perform: envEditMode?.wrappedValue.isEditing == true ? { indexSet in
                         // TODO: リストの項目の削除ボタンが押された時の動作を実装する

@@ -19,4 +19,8 @@ class ListDetailViewModel: ObservableObject {
         self.description = shortcutList.description
         self.applicationURLs = shortcutList.applicationURLs
     }
+    
+    func tapApplication(applicationURL: ApplicationURL) {
+        applicationURL.openApp()
+    }
 }
