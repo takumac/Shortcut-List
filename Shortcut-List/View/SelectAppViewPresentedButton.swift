@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SelectAppViewPresentedButton: View {
     @State var isShowingView: Bool = false
+    @Binding var applicationURLs: [ApplicationURL]
     
     var body: some View {
         VStack {
@@ -28,16 +29,16 @@ struct SelectAppViewPresentedButton: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 20))
                 }
                 .sheet(isPresented: $isShowingView) {
-                    SelectAppView()
+                    SelectAppView(applicationURLs: $applicationURLs)
                 }
             }
         }
     }
 }
 
-struct SelectAppViewPresentedButton_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectAppViewPresentedButton(isShowingView: false)
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct SelectAppViewPresentedButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SelectAppViewPresentedButton(isShowingView: false, applicationURLs: selectAppViewTestData)
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

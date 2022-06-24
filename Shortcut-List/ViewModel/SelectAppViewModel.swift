@@ -9,9 +9,9 @@ import Foundation
 
 class SelectAppViewModel: ObservableObject {
     // Stored property
-    @Published var applicationURLs: [ApplicationURL]
+    @Published var selectableApplicationURLs: [ApplicationURL]
     
     init() {
-        self.applicationURLs = ResourceManager.shared.allApplicationURL
+        selectableApplicationURLs = ResourceManager.shared.allApplicationURL
     }
 }

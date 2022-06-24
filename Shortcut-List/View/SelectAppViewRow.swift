@@ -18,9 +18,9 @@ struct SelectAppViewRow: View {
     }
 }
 
-struct SelectAppViewRow_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectAppViewRow(applicationURL: selectAppViewTestData[0])
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct SelectAppViewRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SelectAppViewRow(applicationURL: selectAppViewTestData[0])
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

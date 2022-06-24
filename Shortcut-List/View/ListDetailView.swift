@@ -85,14 +85,14 @@ struct ListDetailView: View {
             }
             
             if envEditMode?.wrappedValue.isEditing == true {
-                SelectAppViewPresentedButton()
+                SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs)
             }
         }
     }
 }
 
-struct ListDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListDetailView(viewModel: ListDetailViewModel(shortcutList: listDetailViewTestData))
-    }
-}
+//struct ListDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListDetailView(viewModel: ListDetailViewModel(shortcutList: listDetailViewTestData))
+//    }
+//}

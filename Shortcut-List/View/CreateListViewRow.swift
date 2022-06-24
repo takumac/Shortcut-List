@@ -18,9 +18,9 @@ struct CreateListViewRow: View {
     }
 }
 
-struct CreateListViewRow_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateListViewRow(applicationURL: createViewTestData[0])
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct CreateListViewRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CreateListViewRow(applicationURL: createViewTestData[0])
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

@@ -35,9 +35,9 @@ struct CreateListViewPresentedButton: View {
     }
 }
 
-struct CreateListViewPresentedButton_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateListViewPresentedButton(isShowingView: false)
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct CreateListViewPresentedButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CreateListViewPresentedButton(isShowingView: false)
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

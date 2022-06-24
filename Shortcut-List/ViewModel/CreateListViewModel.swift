@@ -17,7 +17,7 @@ class CreateListViewModel: ObservableObject {
     init() {
         title = ""
         description = ""
-        applicationURLs = createViewTestData
+        applicationURLs = [ApplicationURL]()
     }
     
 }

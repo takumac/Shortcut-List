@@ -1,10 +1,50 @@
 [
     {
+        "app_title" : "Line",
+        "app_url" : "line"
+    },
+    {
+        "app_title" : "Twitter",
+        "app_url" : "twitter"
+    },
+    {
+        "app_title" : "Instagram",
+        "app_url" : "instagram"
+    },
+    {
+        "app_title" : "メール",
+        "app_url" : "message"
+    },
+    {
+        "app_title" : "メッセージ",
+        "app_url" : "sms"
+    },
+    {
+        "app_title" : "Music",
+        "app_url" : "music"
+    },
+    {
         "app_title" : "写真",
         "app_url" : "photos-redirect"
     },
     {
+        "app_title" : "マップ",
+        "app_url" : "maps"
+    },
+    {
+        "app_title" : "AppStore",
+        "app_url" : "itms-apps://itunes.apple.com"
+    },
+    {
+        "app_title" : "iTunesStore",
+        "app_url" : "itms"
+    },
+    {
         "app_title" : "カレンダー",
         "app_url" : "calshow"
+    },
+    {
+        "app_title" : "リマインダー",
+        "app_url" : "x-apple-reminderkit"
     }
 ]

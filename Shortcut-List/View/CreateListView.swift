@@ -83,15 +83,15 @@ struct CreateListView: View {
                     }
                     
                 }
-                
-                SelectAppViewPresentedButton()
+//                
+                SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs)
             }
         }
     }
 }
 
-struct CreateListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateListView()
-    }
-}
+//struct CreateListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CreateListView()
+//    }
+//}

@@ -18,9 +18,9 @@ struct ListDetailViewRow: View {
     }
 }
 
-struct ListDetailViewRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ListDetailViewRow(applicationURL: listDetailViewTestData.applicationURLs[0])
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct ListDetailViewRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListDetailViewRow(applicationURL: listDetailViewTestData.applicationURLs[0])
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

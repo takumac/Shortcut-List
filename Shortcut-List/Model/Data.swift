@@ -49,7 +49,7 @@ let selectAppViewTestData = [
 ]
 
 let testData = [
-    ShortcutList(title: "ショートカット1", description: "メール・メッセージ・Music", applicationURLs: [ApplicationURL(appTitle: "メール", appUrl: "message"), ApplicationURL(appTitle: "メッセージ", appUrl: "sms"), ApplicationURL(appTitle: " Music", appUrl: "music")]),
+    ShortcutList(title: "ショートカット1", description: "メール・メッセージ・Music", applicationURLs: [ApplicationURL(appTitle: "メール", appUrl: "message"), ApplicationURL(appTitle: "メッセージ", appUrl: "sms"), ApplicationURL(appTitle: "Music", appUrl: "music")]),
     ShortcutList(title: "ショートカット2", description: "写真・マップ・AppStore", applicationURLs: [ApplicationURL(appTitle: "写真", appUrl: "photos-redirect"), ApplicationURL(appTitle: "マップ", appUrl: "maps"), ApplicationURL(appTitle: "AppStore", appUrl: "itms-apps://itunes.apple.com")]),
     ShortcutList(title: "ショートカット3", description: "iTunesStore・カレンダー・リマインダー", applicationURLs: [ApplicationURL(appTitle: "iTunesStore", appUrl: "itms"), ApplicationURL(appTitle: "カレンダー", appUrl: "calshow"), ApplicationURL(appTitle: "リマインダー", appUrl: "x-apple-reminderkit")]),
     ShortcutList(title: "ショートカット4", description: "Line・Twitter・Instagram", applicationURLs: [ApplicationURL(appTitle: "Line", appUrl: "line"), ApplicationURL(appTitle: "Twitter", appUrl: "twitter"), ApplicationURL(appTitle: "Instagram", appUrl: "instagram")])

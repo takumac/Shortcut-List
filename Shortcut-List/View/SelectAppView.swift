@@ -10,14 +10,19 @@ import SwiftUI
 struct SelectAppView: View {
     
     @Environment(\.dismiss) var dismiss
+    @Binding var applicationURLs: [ApplicationURL]
     
     @ObservedObject var viewModel = SelectAppViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                List(viewModel.applicationURLs) { listItem in
+                List(viewModel.selectableApplicationURLs) { listItem in
                     ListDetailViewRow(applicationURL: listItem)
+                        .onTapGesture {
+                            applicationURLs.append(listItem)
+                            dismiss()
+                        }
                 }
                 .listStyle(.plain)
                 .padding(.top)
@@ -39,8 +44,8 @@ struct SelectAppView: View {
     }
 }
 
-struct SelectAppViwe_Previews: PreviewProvider {
-    static var previews: some View {
-        SelectAppView()
-    }
-}
+//struct SelectAppViwe_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SelectAppView()
+//    }
+//}
