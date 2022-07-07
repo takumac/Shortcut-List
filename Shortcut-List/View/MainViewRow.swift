@@ -13,13 +13,13 @@ struct MainViewRow: View {
     var body: some View {
         VStack {
             HStack {
-                Text(shortcutList.title)
+                Text(shortcutList.listTitle)
                     .font(.title)
                     .foregroundColor(.blue)
                 Spacer()
             }
             HStack {
-                Text(shortcutList.description)
+                Text(shortcutList.listDescription)
                     .foregroundColor(.gray)
                 Spacer()
             }

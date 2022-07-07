@@ -6,16 +6,22 @@
 //
 
 import Foundation
+import RealmSwift
 
-class ShortcutList : Identifiable {
-    var id = UUID()
-    var title: String
-    var description: String
+class ShortcutList : Object, Identifiable {
+    @Persisted(primaryKey: true) var id = UUID()
+    @Persisted var listTitle: String
+    @Persisted var listDescription: String
     var applicationURLs: [ApplicationURL]
     
+    override init() {
+        applicationURLs = []
+        super.init()
+    }
+    
     init(title: String, description: String, applicationURLs: [ApplicationURL]) {
-        self.title = title
-        self.description = description
+        self.listTitle = title
+        self.listDescription = description
         self.applicationURLs = applicationURLs
     }
 }

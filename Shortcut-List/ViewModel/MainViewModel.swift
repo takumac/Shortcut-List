@@ -17,7 +17,7 @@ class MainViewModel: ObservableObject {
         if(searchText.isEmpty) {
             return shortcutLists
         } else {
-            return shortcutLists.filter { $0.title.contains(searchText) }
+            return shortcutLists.filter { $0.listTitle.contains(searchText) }
         }
     }
     

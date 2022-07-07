@@ -7,16 +7,21 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
-class ApplicationURL: Identifiable, Codable {
-    var id = UUID()
-    var appTitle: String
-    var appUrl: String
+class ApplicationURL: Object, Identifiable, Codable {
+    @Persisted(primaryKey: true) var id = UUID()
+    @Persisted var appTitle: String
+    @Persisted var appUrl: String
     
     // JSONキー文字列設定
     private enum CodingKeys : CodingKey { case appTitle, appUrl }
     
-    init (appTitle: String, appUrl: String) {
+    override init() {
+        super.init()
+    }
+    
+    init(appTitle: String, appUrl: String) {
         self.appTitle = appTitle
         self.appUrl = appUrl
     }

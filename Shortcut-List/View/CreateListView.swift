@@ -20,12 +20,12 @@ struct CreateListView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    TextField("タイトルを入力してください", text: $viewModel.title)
+                    TextField("タイトルを入力してください", text: $viewModel.listTitle)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
-                    TextField("補足説明", text: $viewModel.description)
+                    TextField("補足説明", text: $viewModel.listDescription)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.top)
                         .padding(.leading)

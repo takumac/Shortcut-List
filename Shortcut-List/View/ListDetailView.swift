@@ -17,12 +17,12 @@ struct ListDetailView: View {
     var body: some View {
         ZStack {
             VStack {
-                Text(viewModel.title)
+                Text(viewModel.listTitle)
                     .font(.title)
                     .padding(.top)
                     .padding(.leading)
                     .padding(.trailing)
-                Text(viewModel.description)
+                Text(viewModel.listDescription)
                     .font(.title2)
                     .padding(.top)
                     .padding(.leading)

@@ -10,13 +10,13 @@ import SwiftUI
 
 class CreateListViewModel: ObservableObject {
     // Stored property
-    @Published var title: String
-    @Published var description: String
+    @Published var listTitle: String
+    @Published var listDescription: String
     @Published var applicationURLs: [ApplicationURL]
     
     init() {
-        title = ""
-        description = ""
+        listTitle = ""
+        listDescription = ""
         applicationURLs = [ApplicationURL]()
     }
     

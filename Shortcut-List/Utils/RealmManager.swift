@@ -13,9 +13,18 @@ import RealmSwift
  シングルトン設計
  */
 final public class RealmManager {
-    public static var shared = RealmManager()
+    public static let shared = RealmManager()
+    var config: Realm.Configuration
+    var database: Realm?
     
     private init() {
+        config = Realm.Configuration()
+        do {
+            defer { database = nil }
+            try database = Realm(configuration: config)
+        } catch {
+            print("ERROR : \(error)")
+        }
         
     }
     

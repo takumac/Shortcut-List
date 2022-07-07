@@ -10,13 +10,13 @@ import SwiftUI
 
 class ListDetailViewModel: ObservableObject {
     // Stored property
-    @Published var title: String
-    @Published var description: String
+    @Published var listTitle: String
+    @Published var listDescription: String
     @Published var applicationURLs: [ApplicationURL]
     
     init(shortcutList: ShortcutList) {
-        self.title = shortcutList.title
-        self.description = shortcutList.description
+        self.listTitle = shortcutList.listTitle
+        self.listDescription = shortcutList.listDescription
         self.applicationURLs = shortcutList.applicationURLs
     }
     
