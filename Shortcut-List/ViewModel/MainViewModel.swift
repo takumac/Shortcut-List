@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import SwiftUI
+import Combine
 
 class MainViewModel: ObservableObject {
     // Stored property
-    @Published var shortcutLists: [ShortcutList]
     // Computed property
+    @Published var shortcutLists: [ShortcutList] = RealmManager.shared.getShotrcutList()
     @Published var searchText: String = ""
     var searchResult: [ShortcutList] {
         if(searchText.isEmpty) {
@@ -22,7 +22,7 @@ class MainViewModel: ObservableObject {
     }
     
     init() {
-        shortcutLists = testData
+        
     }
     
     

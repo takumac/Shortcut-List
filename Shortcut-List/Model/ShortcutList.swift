@@ -12,10 +12,19 @@ class ShortcutList : Object, Identifiable {
     @Persisted(primaryKey: true) var id = UUID()
     @Persisted var listTitle: String
     @Persisted var listDescription: String
+    
+    // URLリストの格納用
+    // アプリ内ではListではなく、Arrayで扱う
     var applicationURLs: [ApplicationURL]
+    // Realm用List
+    @Persisted var applicationURLList: List<ApplicationURL>
+
     
     override init() {
-        applicationURLs = []
+        self.listTitle = ""
+        self.listDescription = ""
+        self.applicationURLs = []
+        self.applicationURLList = List()
         super.init()
     }
     

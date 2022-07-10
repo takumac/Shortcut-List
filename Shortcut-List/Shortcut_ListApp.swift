@@ -18,8 +18,9 @@ struct Shortcut_ListApp: App {
     
     init() {
         // アプリケーション全体での初期化
-        
+        // Realm初期設定
         // JSONファイルからショートカット対象のアプリケーションの情報を取得
         ResourceManager.shared.decodeAppInfo()
+        
     }
 }

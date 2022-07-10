@@ -20,4 +20,8 @@ class CreateListViewModel: ObservableObject {
         applicationURLs = [ApplicationURL]()
     }
     
+    func addButtonTap() {
+        RealmManager.shared.addShortcutList(shortcutList: ShortcutList(title: self.listTitle, description: self.listDescription, applicationURLs: self.applicationURLs))
+    }
+    
 }
