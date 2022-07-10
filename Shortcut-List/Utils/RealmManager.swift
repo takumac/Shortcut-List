@@ -20,6 +20,7 @@ final public class RealmManager {
     private init() {
         config = Realm.Configuration()
         do {
+            // Realm設定
             try database = Realm(configuration: config)
             print("Realm File : \(Realm.Configuration.defaultConfiguration.fileURL!)")
         } catch {
@@ -50,7 +51,8 @@ final public class RealmManager {
             
             return returnShortcutList
         } else {
-            // Realmが参照不可なら空リストを返却
+            // Realmが参照不可なら空のリストを使用
+            print("Realm Error")
             return [ShortcutList]()
         }
     }

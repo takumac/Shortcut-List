@@ -81,7 +81,9 @@ struct MainView: View {
                 }
                 
                 if editMode.isEditing == false {
-                    CreateListViewPresentedButton()
+                    CreateListViewPresentedButton(onDismissProc: {
+                        viewModel.getShortcutLists()
+                    })
                 }
             }
             .environment(\.editMode, $editMode)

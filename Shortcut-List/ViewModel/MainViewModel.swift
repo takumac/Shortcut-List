@@ -11,8 +11,8 @@ import Combine
 class MainViewModel: ObservableObject {
     // Stored property
     // Computed property
-    @Published var shortcutLists: [ShortcutList] = RealmManager.shared.getShotrcutList()
-    @Published var searchText: String = ""
+    @Published var shortcutLists: [ShortcutList]
+    @Published var searchText: String
     var searchResult: [ShortcutList] {
         if(searchText.isEmpty) {
             return shortcutLists
@@ -22,7 +22,15 @@ class MainViewModel: ObservableObject {
     }
     
     init() {
-        
+        shortcutLists = RealmManager.shared.getShotrcutList()
+        searchText = ""
+    }
+    
+    /**
+     最新のRealmの状態でショートカットリストを更新する
+     */
+    func getShortcutLists() {
+        shortcutLists = RealmManager.shared.getShotrcutList()
     }
     
     

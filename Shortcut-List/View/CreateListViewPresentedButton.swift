@@ -10,6 +10,9 @@ import SwiftUI
 struct CreateListViewPresentedButton: View {
     @State var isShowingView: Bool = false
     
+    //モーダル表示から戻る際に実行するクロージャ関数
+    let onDismissProc:(() -> Void)
+    
     var body: some View {
         VStack {
             Spacer()
@@ -27,7 +30,9 @@ struct CreateListViewPresentedButton: View {
                         .shadow(color: .gray, radius: 3, x: 3, y: 3)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 20))
                 }
-                .sheet(isPresented: $isShowingView) {
+                .sheet(isPresented: $isShowingView, onDismiss: {
+                    onDismissProc()
+                }) {
                     CreateListView()
                 }
             }
