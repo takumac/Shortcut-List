@@ -25,8 +25,7 @@ struct MainView: View {
                         }
                     }
                     .onDelete(perform: editMode.isEditing ? { indexSet in
-                        // TODO: リストの項目の削除ボタンが押された時の動作を実装する
-                        print("削除ボタン押された")
+                        viewModel.deleteShotrcutListItem(offsets: indexSet)
                     } : nil)
                     .onMove(perform: { indices, newOffset in
                         // TODO: リストの項目が移動した時の動作を実装する
@@ -45,8 +44,6 @@ struct MainView: View {
                                 withAnimation() {
                                     // TODO: 歯車マークを押した時の動作を実装する
                                     print("歯車ボタンを押した")
-                                    // TODO: カスタムURLスキームで起動するようのテスト
-                                    viewModel.runApp()
                                 }
                                 
                             }) {
@@ -65,8 +62,6 @@ struct MainView: View {
                                         $editMode.wrappedValue = .inactive
                                     } else {
                                         $editMode.wrappedValue = .active
-                                        // TODO: カスタムURLスキームで起動するようのテスト
-                                        viewModel.runApp2()
                                     }
                                 }
                             }) {
@@ -82,7 +77,7 @@ struct MainView: View {
                 
                 if editMode.isEditing == false {
                     CreateListViewPresentedButton(onDismissProc: {
-                        viewModel.getShortcutLists()
+                        viewModel.updateShortcutLists()
                     })
                 }
             }

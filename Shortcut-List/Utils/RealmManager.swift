@@ -31,7 +31,7 @@ final public class RealmManager {
     }
     
     /**
-     Realmに保存されているショートカットリストを取得する
+     Realmに保存されているショートカットリストを全件取得する
      - Returns: 取得できたショートカットリスト
      */
     func getShotrcutList() -> [ShortcutList] {
@@ -41,6 +41,7 @@ final public class RealmManager {
             var returnShortcutList:[ShortcutList] = [ShortcutList]()
             realmResults.forEach {
                 let shortcutList = ShortcutList()
+                shortcutList.id = $0.id
                 shortcutList.listTitle = $0.listTitle
                 shortcutList.listDescription = $0.listDescription
                 shortcutList.applicationURLList = $0.applicationURLList
@@ -65,7 +66,6 @@ final public class RealmManager {
     func addShortcutList(shortcutList: ShortcutList) {
         // モデルのArrayをRealm用のListにコピー
         shortcutList.applicationURLList.append(objectsIn: shortcutList.applicationURLs)
-        print("呼ばれた")
         // Realmに追加
         do {
             try database?.write {
@@ -74,6 +74,40 @@ final public class RealmManager {
         } catch {
             print("ERROR : \(error)")
         }
+    }
+    
+    /**
+     Realmからショートカットリストを削除する
+     - Parameter deleteObject: 削除対象のショートカットリスト
+     */
+    func deleteShortcutList(deleteObject: ShortcutList) {
+        // パラメタの情報から削除対象のショートカットリストデータを取得
+        if let targetShortcutList = database?.objects(ShortcutList.self).filter("id == \"\(deleteObject.id)\"") {
+            // Realmから削除
+            do {
+                try database?.write {
+                    // ShortcutListを削除
+                    database?.delete(targetShortcutList)
+                }
+            } catch {
+                print("ERROR : \(error)")
+            }
+        }
+        // 削除対象のショートカットリストとリレーションを持つアプリケーションURLデータを取得
+        deleteObject.applicationURLs.forEach {
+            if let targetApplicationURL = database?.objects(ApplicationURL.self).filter("id == \"\($0.id)\"") {
+                // Realmから削除
+                do {
+                    try database?.write {
+                        // ApplicationURLを削除
+                        database?.delete(targetApplicationURL)
+                    }
+                } catch {
+                    print("ERROR : \(error)")
+                }
+            }
+        }
+        
     }
     
 }

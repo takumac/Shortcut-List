@@ -10,7 +10,7 @@ import SwiftUI
 struct CreateListViewPresentedButton: View {
     @State var isShowingView: Bool = false
     
-    //モーダル表示から戻る際に実行するクロージャ関数
+    //モーダル表示から戻る際に実行するクロージャ
     let onDismissProc:(() -> Void)
     
     var body: some View {
