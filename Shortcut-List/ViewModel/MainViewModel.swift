@@ -22,7 +22,7 @@ class MainViewModel: ObservableObject {
     }
     
     init() {
-        shortcutLists = RealmManager.shared.getShotrcutList()
+        shortcutLists = RealmManager.shared.getShortcutList()
         searchText = ""
     }
     
@@ -30,7 +30,7 @@ class MainViewModel: ObservableObject {
      最新のRealmの状態でショートカットリストを更新する
      */
     func updateShortcutLists() {
-        shortcutLists = RealmManager.shared.getShotrcutList()
+        shortcutLists = RealmManager.shared.getShortcutList()
     }
     
     /**
@@ -44,17 +44,35 @@ class MainViewModel: ObservableObject {
         self.shortcutLists.remove(atOffsets: offsets)
     }
     
-    
-    
-    
-    // TODO:  テスト用に直接アプリのURLを指定して開いてみる
-    var tmpApplicationURL = ApplicationURL(appTitle: "photos", appUrl: "photos-redirect://")
-    func runApp() {
-        tmpApplicationURL.openApp()
-    }
-    var tmpApplicationURL2 = ApplicationURL(appTitle: "calshow", appUrl: "calshow://")
-    func runApp2() {
-        tmpApplicationURL2.openApp()
+    /**
+     ショートカットリストを並び替える
+     */
+    func moveShortcutListItem(indexSet: IndexSet, toOffset: Int) {
+        // Realm内のデータを並び替える
+        guard let index = indexSet.first else {
+            print("行数取得エラー")
+            return
+        }
+        
+        // 並び替える行のidを取得
+        let moveItem = self.shortcutLists[index]
+        
+        if (index < toOffset) { // 対象の行を下に移動させた場合
+            for i in (index + 1)...(toOffset - 1) {
+                RealmManager.shared.updateShortcutListOrder(shortcutList: shortcutLists[i], order: shortcutLists[i].order - 1)
+            }
+            RealmManager.shared.updateShortcutListOrder(shortcutList: moveItem, order: toOffset - 1)
+        } else if (index > toOffset) { // 対象の行を上に移動させた場合
+            for i in (toOffset...(index - 1)).reversed() {
+                RealmManager.shared.updateShortcutListOrder(shortcutList: shortcutLists[i], order: shortcutLists[i].order + 1)
+            }
+            RealmManager.shared.updateShortcutListOrder(shortcutList: moveItem, order: toOffset)
+        } else { // 同じ行に移動させた場合
+            return
+        }
+        
+        // 表示しているデータを並び替える
+        self.shortcutLists.move(fromOffsets: indexSet, toOffset: toOffset)
     }
     
 }

@@ -27,9 +27,8 @@ struct MainView: View {
                     .onDelete(perform: editMode.isEditing ? { indexSet in
                         viewModel.deleteShotrcutListItem(offsets: indexSet)
                     } : nil)
-                    .onMove(perform: { indices, newOffset in
-                        // TODO: リストの項目が移動した時の動作を実装する
-                        print("移動ボタン")
+                    .onMove(perform: { indexSet, toOffset in
+                        viewModel.moveShortcutListItem(indexSet: indexSet, toOffset: toOffset)
                     })
                 }
                 .listStyle(.plain)
