@@ -12,6 +12,7 @@ class ShortcutList : Object, Identifiable {
     @Persisted(primaryKey: true) var id = UUID()
     @Persisted var listTitle: String
     @Persisted var listDescription: String
+    @Persisted var order: Int
     
     // URLリストの格納用
     // アプリ内ではListではなく、Arrayで扱う
@@ -28,9 +29,10 @@ class ShortcutList : Object, Identifiable {
         super.init()
     }
     
-    init(title: String, description: String, applicationURLs: [ApplicationURL]) {
+    init(title: String, description: String, applicationURLs: [ApplicationURL], order: Int) {
         self.listTitle = title
         self.listDescription = description
         self.applicationURLs = applicationURLs
+        self.order = order
     }
 }

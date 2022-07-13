@@ -18,7 +18,16 @@ final public class RealmManager {
     var database: Realm?
     
     private init() {
-        config = Realm.Configuration()
+        // マイグレーション処理
+        // DBの定義を変更する場合はnextSchemaVersionの値を1上げる
+        let nextSchemaVersion = UInt64(1)
+        config = Realm.Configuration(
+            schemaVersion: nextSchemaVersion,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < nextSchemaVersion) {}
+            })
+        config.deleteRealmIfMigrationNeeded = true
+        
         do {
             // Realm設定
             try database = Realm(configuration: config)
@@ -30,35 +39,8 @@ final public class RealmManager {
         
     }
     
-    /**
-     Realmに保存されているショートカットリストを全件取得する
-     - Returns: 取得できたショートカットリスト
-     */
-    func getShotrcutList() -> [ShortcutList] {
-        if database != nil {
-            // Realmが参照可能なら取得できたリストを使用
-            let realmResults = database!.objects(ShortcutList.self)
-            var returnShortcutList:[ShortcutList] = [ShortcutList]()
-            realmResults.forEach {
-                let shortcutList = ShortcutList()
-                shortcutList.id = $0.id
-                shortcutList.listTitle = $0.listTitle
-                shortcutList.listDescription = $0.listDescription
-                shortcutList.applicationURLList = $0.applicationURLList
-                shortcutList.applicationURLs.append(contentsOf: Array($0.applicationURLList))
-                
-                returnShortcutList.append(shortcutList)
-            }
-            
-            return returnShortcutList
-        } else {
-            // Realmが参照不可なら空のリストを使用
-            print("Realm Error")
-            return [ShortcutList]()
-        }
-    }
     
-    
+    // Create
     /**
      Realmにショートカットリストを追加する
      - Parameter shortcutList: 追加するショートカットリスト
@@ -76,6 +58,73 @@ final public class RealmManager {
         }
     }
     
+    
+    // Read
+    /**
+     Realmに保存されているショートカットリストを全件取得する
+     - Returns: 取得できたショートカットリスト
+     */
+    func getShortcutList() -> [ShortcutList] {
+        if database != nil {
+            // Realmが参照可能なら取得できたリストを使用
+            let realmResults = database!.objects(ShortcutList.self).sorted(byKeyPath: "order", ascending: true)
+            var returnShortcutList:[ShortcutList] = [ShortcutList]()
+            realmResults.forEach {
+                let shortcutList = ShortcutList()
+                shortcutList.id = $0.id
+                shortcutList.listTitle = $0.listTitle
+                shortcutList.listDescription = $0.listDescription
+                shortcutList.order = $0.order
+                shortcutList.applicationURLList = $0.applicationURLList
+                shortcutList.applicationURLs.append(contentsOf: Array($0.applicationURLList))
+                
+                returnShortcutList.append(shortcutList)
+            }
+            
+            return returnShortcutList
+        } else {
+            // Realmが参照不可なら空のリストを使用
+            print("Realm Error : RealmManager#getShortcutList")
+            return [ShortcutList]()
+        }
+    }
+    
+    /**
+     Realmに保存されているショートカットリストの件数を取得する
+     - Returns: 保存されている件数
+     */
+    func getShortcutListCount() -> Int {
+        if database != nil {
+            // Realmが参照可能なら取得できたリストを使用
+            let realmResults = database!.objects(ShortcutList.self)
+            return realmResults.count
+        } else {
+            print("Realm Error : RealmManager#getShortcutListCount")
+            return 0
+        }
+    }
+    
+    
+    // Update
+    func updateShortcutListOrder(shortcutList: ShortcutList, order: Int) {
+        do {
+            try database?.write {
+                database?.add(ShortcutList(
+                                value: ["id" : shortcutList.id,
+                                        "listTitle" : shortcutList.listTitle,
+                                        "listDescription" : shortcutList.listDescription,
+                                        "applicationURLList" : shortcutList.applicationURLList,
+                                        "order" : order]
+                                ),
+                              update: .modified)
+            }
+        } catch {
+            print("Realm Error : \(error)")
+        }
+    }
+    
+    
+    // Delete
     /**
      Realmからショートカットリストを削除する
      - Parameter deleteObject: 削除対象のショートカットリスト

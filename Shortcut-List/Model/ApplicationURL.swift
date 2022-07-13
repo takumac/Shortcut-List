@@ -13,6 +13,7 @@ class ApplicationURL: Object, Identifiable, Codable {
     @Persisted(primaryKey: true) var id = UUID()
     @Persisted var appTitle: String
     @Persisted var appUrl: String
+    @Persisted var order: Int
     
     // JSONキー文字列設定
     private enum CodingKeys : CodingKey { case appTitle, appUrl }
@@ -21,9 +22,10 @@ class ApplicationURL: Object, Identifiable, Codable {
         super.init()
     }
     
-    init(appTitle: String, appUrl: String) {
+    init(appTitle: String, appUrl: String, order: Int) {
         self.appTitle = appTitle
         self.appUrl = appUrl
+        self.order = order
     }
     
     func openApp() {
