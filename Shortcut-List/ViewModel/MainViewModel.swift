@@ -38,6 +38,20 @@ class MainViewModel: ObservableObject {
      - Parameter offsets: 削除対象のリストの行数データ
      */
     func deleteShotrcutListItem(offsets: IndexSet) {
+        guard let index = offsets.first else {
+            print("行数取得エラー")
+            return
+        }
+        
+        // 削除する行のデータを取得
+        let deleteItem = self.shortcutLists[index]
+        
+        // 削除する行の行番号より大きい行番号を全て-1する
+        for i in (deleteItem.order + 1)..<self.shortcutLists.count {
+            RealmManager.shared.updateShortcutListOrder(shortcutList: self.shortcutLists[i], order: self.shortcutLists[i].order - 1)
+            self.shortcutLists[i].order -= 1
+        }
+        
         // Realmから削除
         RealmManager.shared.deleteShortcutList(deleteObject: self.shortcutLists[offsets.first!])
         // 表示している配列データから削除
@@ -48,13 +62,12 @@ class MainViewModel: ObservableObject {
      ショートカットリストを並び替える
      */
     func moveShortcutListItem(indexSet: IndexSet, toOffset: Int) {
-        // Realm内のデータを並び替える
         guard let index = indexSet.first else {
             print("行数取得エラー")
             return
         }
         
-        // 並び替える行のidを取得
+        // 並び替える行のデータを取得
         let moveItem = self.shortcutLists[index]
         
         if (index < toOffset) { // 対象の行を下に移動させた場合
