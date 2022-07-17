@@ -28,15 +28,14 @@ struct ListDetailView: View {
                     .padding(.leading)
                     .padding(.trailing)
                 List {
-                    ForEach(viewModel.applicationURLs) { listItem in
+                    ForEach(viewModel.applicationURLs, id: \.id) { listItem in
                         ListDetailViewRow(applicationURL: listItem)
                             .onTapGesture {
                                 viewModel.tapApplication(applicationURL: listItem)
                             }
                     }
                     .onDelete(perform: envEditMode?.wrappedValue.isEditing == true ? { indexSet in
-                        // TODO: リストの項目の削除ボタンが押された時の動作を実装する
-                        print("削除ボタン押された")
+                        viewModel.deleteApplicationURL(offsets: indexSet)
                     } : nil)
                     .onMove(perform: { indices, newOffset in
                         // TODO: リストの項目が移動した時の動作を実装する

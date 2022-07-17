@@ -24,7 +24,9 @@ final public class RealmManager {
         config = Realm.Configuration(
             schemaVersion: nextSchemaVersion,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < nextSchemaVersion) {}
+                if (oldSchemaVersion < nextSchemaVersion) {
+                    // マイグレーション時の処理を記載
+                }
             })
         config.deleteRealmIfMigrationNeeded = true
         
@@ -144,19 +146,27 @@ final public class RealmManager {
         }
         // 削除対象のショートカットリストとリレーションを持つアプリケーションURLデータを取得
         deleteObject.applicationURLs.forEach {
-            if let targetApplicationURL = database?.objects(ApplicationURL.self).filter("id == \"\($0.id)\"") {
-                // Realmから削除
-                do {
-                    try database?.write {
-                        // ApplicationURLを削除
-                        database?.delete(targetApplicationURL)
-                    }
-                } catch {
-                    print("ERROR : \(error)")
-                }
-            }
+            deleteApplicationURL(deleteObject: $0)
         }
         
+    }
+    
+    /**
+     Realmからアプリケーションを削除する
+     - Parameter deleteObject: 削除対象のアプリケーション
+     */
+    func deleteApplicationURL(deleteObject: ApplicationURL) {
+        if let targetApplicationURL = database?.objects(ApplicationURL.self).filter("id == \"\(deleteObject.id)\"") {
+            // Realmから削除
+            do {
+                try database?.write {
+                    // ApplicationURLを削除
+                    database?.delete(targetApplicationURL)
+                }
+            } catch {
+                print("ERROR : \(error)")
+            }
+        }
     }
     
 }
