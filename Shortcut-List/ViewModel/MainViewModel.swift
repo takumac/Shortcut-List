@@ -60,13 +60,17 @@ class MainViewModel: ObservableObject {
         if (index < toOffset) { // 対象の行を下に移動させた場合
             for i in (index + 1)...(toOffset - 1) {
                 RealmManager.shared.updateShortcutListOrder(shortcutList: shortcutLists[i], order: shortcutLists[i].order - 1)
+                self.shortcutLists[i].order = self.shortcutLists[i].order - 1
             }
             RealmManager.shared.updateShortcutListOrder(shortcutList: moveItem, order: toOffset - 1)
-        } else if (index > toOffset) { // 対象の行を上に移動させた場合
+            self.shortcutLists[index].order = toOffset - 1
+        } else if toOffset < index { // 対象の行を上に移動させた場合
             for i in (toOffset...(index - 1)).reversed() {
                 RealmManager.shared.updateShortcutListOrder(shortcutList: shortcutLists[i], order: shortcutLists[i].order + 1)
+                self.shortcutLists[i].order = self.shortcutLists[i].order + 1
             }
             RealmManager.shared.updateShortcutListOrder(shortcutList: moveItem, order: toOffset)
+            self.shortcutLists[index].order = toOffset
         } else { // 同じ行に移動させた場合
             return
         }
