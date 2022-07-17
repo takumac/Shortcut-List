@@ -20,7 +20,12 @@ struct SelectAppView: View {
                 List(viewModel.selectableApplicationURLs) { listItem in
                     ListDetailViewRow(applicationURL: listItem)
                         .onTapGesture {
-                            applicationURLs.append(listItem)
+                            applicationURLs.append(ApplicationURL(
+                                                    appTitle: listItem.appTitle,
+                                                    appUrl: listItem.appUrl,
+                                                    order: self.applicationURLs.count
+                                                    )
+                                                )
                             dismiss()
                         }
                 }

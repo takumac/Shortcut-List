@@ -21,6 +21,7 @@ class CreateListViewModel: ObservableObject {
     }
     
     func addButtonTap() {
+        // Realmに新規リストを登録
         RealmManager.shared.addShortcutList(
             shortcutList: ShortcutList(
                             title: self.listTitle,

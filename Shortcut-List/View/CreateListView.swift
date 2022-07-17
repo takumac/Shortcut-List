@@ -74,7 +74,6 @@ struct CreateListView: View {
                                             print("キャンセル押された")
                                         },
                                         secondaryButton: .default(Text("追加")) {
-                                            // TODO: 新規リストが作成された時の動作を実装する
                                             viewModel.addButtonTap()
                                             dismiss()
                                         })
@@ -83,7 +82,7 @@ struct CreateListView: View {
                     }
                     
                 }
-//                
+                
                 SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs)
             }
         }
