@@ -79,6 +79,7 @@ final public class RealmManager {
                 shortcutList.order = $0.order
                 shortcutList.applicationURLList = $0.applicationURLList
                 shortcutList.applicationURLs.append(contentsOf: Array($0.applicationURLList))
+                shortcutList.applicationURLs.sort(by: {$0.order < $1.order})
                 
                 returnShortcutList.append(shortcutList)
             }

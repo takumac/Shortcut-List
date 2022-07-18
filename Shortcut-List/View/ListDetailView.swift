@@ -37,9 +37,8 @@ struct ListDetailView: View {
                     .onDelete(perform: envEditMode?.wrappedValue.isEditing == true ? { indexSet in
                         viewModel.deleteApplicationURL(offsets: indexSet)
                     } : nil)
-                    .onMove(perform: { indices, newOffset in
-                        // TODO: リストの項目が移動した時の動作を実装する
-                        print("移動ボタン")
+                    .onMove(perform: { indexSet, toOffset in
+                        viewModel.moveApplicationItem(indexSet: indexSet, toOffset: toOffset)
                     })
                 }
                 .listStyle(.plain)
