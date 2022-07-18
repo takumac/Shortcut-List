@@ -64,7 +64,6 @@ struct ListDetailView: View {
                             action: {
                                 withAnimation() {
                                     if envEditMode?.wrappedValue.isEditing == true {
-                                        // TODO: リストの編集が完了した時に動作を実装する
                                         envEditMode?.wrappedValue = .inactive
                                     } else {
                                         envEditMode?.wrappedValue = .active
@@ -83,7 +82,7 @@ struct ListDetailView: View {
             }
             
             if envEditMode?.wrappedValue.isEditing == true {
-                SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs)
+                SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs, onDismissProc: viewModel.addedApplication)
             }
         }
     }

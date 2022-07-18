@@ -29,10 +29,27 @@ class ShortcutList : Object, Identifiable {
         super.init()
     }
     
+    /**
+     新規のショートカットリストとして初期化（id未指定）
+     */
     init(title: String, description: String, applicationURLs: [ApplicationURL], order: Int) {
         self.listTitle = title
         self.listDescription = description
         self.applicationURLs = applicationURLs
         self.order = order
+    }
+    
+    /**
+     既存のショートカットリストの内容を引き継いで初期化（id指定）
+     */
+    init(id: UUID, title: String, description: String, applicationURLs: [ApplicationURL], order: Int) {
+        self.id = id
+        self.listTitle = title
+        self.listDescription = description
+        self.applicationURLs = applicationURLs
+        self.order = order
+        
+        super.init()
+        self.applicationURLList.append(objectsIn: applicationURLs)
     }
 }

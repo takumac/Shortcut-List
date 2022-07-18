@@ -14,14 +14,32 @@ class ListDetailViewModel: ObservableObject {
     @Published var listDescription: String
     @Published var applicationURLs: [ApplicationURL]
     
+    // アプリケーションが「追加」された際にショートカットリスト自体を更新するために保持している変数
+    var id: UUID
+    var order: Int
+    
     init(shortcutList: ShortcutList) {
         self.listTitle = shortcutList.listTitle
         self.listDescription = shortcutList.listDescription
         self.applicationURLs = shortcutList.applicationURLs
+        
+        self.id = shortcutList.id
+        self.order = shortcutList.order
     }
     
     func tapApplication(applicationURL: ApplicationURL) {
         applicationURL.openApp()
+    }
+    
+    func addedApplication() {
+        RealmManager.shared.updateShortcutList(updateObject: ShortcutList(
+                                                                id: self.id,
+                                                                title: self.listTitle,
+                                                                description: self.listDescription,
+                                                                applicationURLs: self.applicationURLs,
+                                                                order: self.order
+                                                                )
+                                                            )
     }
     
     /**

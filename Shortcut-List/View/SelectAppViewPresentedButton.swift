@@ -11,6 +11,9 @@ struct SelectAppViewPresentedButton: View {
     @State var isShowingView: Bool = false
     @Binding var applicationURLs: [ApplicationURL]
     
+    //モーダル表示から戻る際に実行するクロージャ
+    let onDismissProc:(() -> Void)?
+    
     var body: some View {
         VStack {
             Spacer()
@@ -28,7 +31,11 @@ struct SelectAppViewPresentedButton: View {
                         .shadow(color: .gray, radius: 3, x: 3, y: 3)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 20))
                 }
-                .sheet(isPresented: $isShowingView) {
+                .sheet(isPresented: $isShowingView, onDismiss: {
+                    if let dismissProc = self.onDismissProc {
+                        dismissProc()
+                    }
+                }) {
                     SelectAppView(applicationURLs: $applicationURLs)
                 }
             }
