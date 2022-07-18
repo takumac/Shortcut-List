@@ -48,8 +48,8 @@ class MainViewModel: ObservableObject {
         
         // 削除する行の行番号より大きい行番号を全て-1する
         for i in (deleteItem.order + 1)..<self.shortcutLists.count {
-            RealmManager.shared.updateShortcutListOrder(shortcutList: self.shortcutLists[i], order: self.shortcutLists[i].order - 1)
             self.shortcutLists[i].order -= 1
+            RealmManager.shared.updateShortcutList(updateObject: self.shortcutLists[i])
         }
         
         // Realmから削除
@@ -60,6 +60,9 @@ class MainViewModel: ObservableObject {
     
     /**
      ショートカットリストを並び替える
+     - Parameters:
+     - indexSet: 移動元の行のIndexSet
+     - toOffset: 移動後の行の行数
      */
     func moveShortcutListItem(indexSet: IndexSet, toOffset: Int) {
         guard let index = indexSet.first else {
@@ -67,23 +70,20 @@ class MainViewModel: ObservableObject {
             return
         }
         
-        // 並び替える行のデータを取得
-        let moveItem = self.shortcutLists[index]
-        
-        if (index < toOffset) { // 対象の行を下に移動させた場合
+        if index < toOffset { // 対象の行を下に移動させた場合
             for i in (index + 1)...(toOffset - 1) {
-                RealmManager.shared.updateShortcutListOrder(shortcutList: shortcutLists[i], order: shortcutLists[i].order - 1)
                 self.shortcutLists[i].order = self.shortcutLists[i].order - 1
+                RealmManager.shared.updateShortcutList(updateObject: self.shortcutLists[i])
             }
-            RealmManager.shared.updateShortcutListOrder(shortcutList: moveItem, order: toOffset - 1)
             self.shortcutLists[index].order = toOffset - 1
+            RealmManager.shared.updateShortcutList(updateObject: self.shortcutLists[index])
         } else if toOffset < index { // 対象の行を上に移動させた場合
             for i in (toOffset...(index - 1)).reversed() {
-                RealmManager.shared.updateShortcutListOrder(shortcutList: shortcutLists[i], order: shortcutLists[i].order + 1)
                 self.shortcutLists[i].order = self.shortcutLists[i].order + 1
+                RealmManager.shared.updateShortcutList(updateObject: self.shortcutLists[i])
             }
-            RealmManager.shared.updateShortcutListOrder(shortcutList: moveItem, order: toOffset)
             self.shortcutLists[index].order = toOffset
+            RealmManager.shared.updateShortcutList(updateObject: self.shortcutLists[index])
         } else { // 同じ行に移動させた場合
             return
         }

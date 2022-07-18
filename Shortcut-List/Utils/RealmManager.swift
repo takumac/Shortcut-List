@@ -24,7 +24,7 @@ final public class RealmManager {
         config = Realm.Configuration(
             schemaVersion: nextSchemaVersion,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < nextSchemaVersion) {
+                if oldSchemaVersion < nextSchemaVersion {
                     // マイグレーション時の処理を記載
                 }
             })
@@ -108,17 +108,39 @@ final public class RealmManager {
     
     
     // Update
-    func updateShortcutListOrder(shortcutList: ShortcutList, order: Int) {
+    /**
+     Realmに保存されているショートカットリストを更新する
+     - Parameter updateObject: 更新対象のショートカットリスト
+     */
+    func updateShortcutList(updateObject: ShortcutList) {
         do {
             try database?.write {
                 database?.add(ShortcutList(
-                                value: ["id" : shortcutList.id,
-                                        "listTitle" : shortcutList.listTitle,
-                                        "listDescription" : shortcutList.listDescription,
-                                        "applicationURLList" : shortcutList.applicationURLList,
-                                        "order" : order]
-                                ),
-                              update: .modified)
+                                value: ["id" : updateObject.id,
+                                        "listTitle" : updateObject.listTitle,
+                                        "listDescription" : updateObject.listDescription,
+                                        "applicationURLList" : updateObject.applicationURLList,
+                                        "order" : updateObject.order]
+                            ), update: .modified)
+            }
+        } catch {
+            print("Realm Error : \(error)")
+        }
+    }
+    
+    /**
+     Realmに保存されているアプリケーションを更新する
+     - Parameter updateObject: 更新対象のアプリケーション
+     */
+    func updateApplication(updateObject: ApplicationURL) {
+        do {
+            try database?.write {
+                database?.add(ApplicationURL(
+                            value: ["id" : updateObject.id,
+                                    "appTitle" : updateObject.appTitle,
+                                    "appUrl" : updateObject.appUrl,
+                                    "order" : updateObject.order]
+                            ), update: .modified)
             }
         } catch {
             print("Realm Error : \(error)")
