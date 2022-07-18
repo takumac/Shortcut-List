@@ -11,7 +11,7 @@ struct CreateListViewPresentedButton: View {
     @State var isShowingView: Bool = false
     
     //モーダル表示から戻る際に実行するクロージャ
-    let onDismissProc:(() -> Void)
+    let onDismissProc:(() -> Void)?
     
     var body: some View {
         VStack {
@@ -31,7 +31,9 @@ struct CreateListViewPresentedButton: View {
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 20))
                 }
                 .sheet(isPresented: $isShowingView, onDismiss: {
-                    onDismissProc()
+                    if let dismissProc = self.onDismissProc {
+                        dismissProc()
+                    }
                 }) {
                     CreateListView()
                 }

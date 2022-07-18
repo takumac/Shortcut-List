@@ -83,7 +83,7 @@ struct CreateListView: View {
                     
                 }
                 
-                SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs)
+                SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs, onDismissProc: nil)
             }
         }
     }
