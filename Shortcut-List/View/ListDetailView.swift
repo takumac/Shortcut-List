@@ -17,16 +17,28 @@ struct ListDetailView: View {
     var body: some View {
         ZStack {
             VStack {
-                Text(viewModel.listTitle)
-                    .font(.title)
+//                Text(viewModel.listTitle)
+//                    .font(.title)
+//                    .padding(.top)
+//                    .padding(.leading)
+//                    .padding(.trailing)
+//                Text(viewModel.listDescription)
+//                    .font(.title2)
+//                    .padding(.top)
+//                    .padding(.leading)
+//                    .padding(.trailing)
+                TextField("タイトルを入力してください", text: $viewModel.listTitle)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.top)
                     .padding(.leading)
                     .padding(.trailing)
-                Text(viewModel.listDescription)
-                    .font(.title2)
+                    .disabled(envEditMode?.wrappedValue.isEditing == false)
+                TextField("補足説明", text: $viewModel.listDescription)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.top)
                     .padding(.leading)
                     .padding(.trailing)
+                    .disabled(envEditMode?.wrappedValue.isEditing == false)
                 List {
                     ForEach(viewModel.applicationURLs, id: \.id) { listItem in
                         ListDetailViewRow(applicationURL: listItem)
@@ -65,6 +77,7 @@ struct ListDetailView: View {
                                 withAnimation() {
                                     if envEditMode?.wrappedValue.isEditing == true {
                                         envEditMode?.wrappedValue = .inactive
+                                        viewModel.updateShortcutList()
                                     } else {
                                         envEditMode?.wrappedValue = .active
                                     }
@@ -82,7 +95,7 @@ struct ListDetailView: View {
             }
             
             if envEditMode?.wrappedValue.isEditing == true {
-                SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs, onDismissProc: viewModel.addedApplication)
+                SelectAppViewPresentedButton(applicationURLs: $viewModel.applicationURLs, onDismissProc: viewModel.updateShortcutList)
             }
         }
     }

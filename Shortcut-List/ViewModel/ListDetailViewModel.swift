@@ -31,7 +31,7 @@ class ListDetailViewModel: ObservableObject {
         applicationURL.openApp()
     }
     
-    func addedApplication() {
+    func updateShortcutList() {
         RealmManager.shared.updateShortcutList(updateObject: ShortcutList(
                                                                 id: self.id,
                                                                 title: self.listTitle,

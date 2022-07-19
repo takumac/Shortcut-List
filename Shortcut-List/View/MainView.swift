@@ -80,6 +80,7 @@ struct MainView: View {
                     })
                 }
             }
+            .onAppear(perform: viewModel.updateShortcutLists)
             .environment(\.editMode, $editMode)
         }
     }
