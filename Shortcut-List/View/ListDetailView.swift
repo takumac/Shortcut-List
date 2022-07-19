@@ -14,31 +14,25 @@ struct ListDetailView: View {
     
     @ObservedObject var viewModel: ListDetailViewModel
     
+    // タイトルと補足説明の入力可・不可の制御に使用
+    // TextFieldのdisabledにenvEditModeを使うと正常に動作しなかったため
+    @State var isDisabled = true
+    
     var body: some View {
         ZStack {
             VStack {
-//                Text(viewModel.listTitle)
-//                    .font(.title)
-//                    .padding(.top)
-//                    .padding(.leading)
-//                    .padding(.trailing)
-//                Text(viewModel.listDescription)
-//                    .font(.title2)
-//                    .padding(.top)
-//                    .padding(.leading)
-//                    .padding(.trailing)
                 TextField("タイトルを入力してください", text: $viewModel.listTitle)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.top)
                     .padding(.leading)
                     .padding(.trailing)
-                    .disabled(envEditMode?.wrappedValue.isEditing == false)
+                    .disabled(isDisabled)
                 TextField("補足説明", text: $viewModel.listDescription)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.top)
                     .padding(.leading)
                     .padding(.trailing)
-                    .disabled(envEditMode?.wrappedValue.isEditing == false)
+                    .disabled(isDisabled)
                 List {
                     ForEach(viewModel.applicationURLs, id: \.id) { listItem in
                         ListDetailViewRow(applicationURL: listItem)
@@ -74,17 +68,17 @@ struct ListDetailView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(
                             action: {
+                                viewModel.updateShortcutList()
                                 withAnimation() {
                                     if envEditMode?.wrappedValue.isEditing == true {
                                         envEditMode?.wrappedValue = .inactive
-                                        viewModel.updateShortcutList()
                                     } else {
                                         envEditMode?.wrappedValue = .active
+                                        self.isDisabled.toggle()
                                     }
                                 }
                             }) {
                                 if envEditMode?.wrappedValue.isEditing == true {
-                                    // TODO: リストの項目の編集が完了した時の動作を実装する
                                     Text("完了")
                                 } else {
                                     Text("編集")
