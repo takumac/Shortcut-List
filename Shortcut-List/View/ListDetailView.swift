@@ -43,7 +43,7 @@ struct ListDetailView: View {
                 }
                 .listStyle(.plain)
                 .padding(.top)
-                .navigationTitle("起動アプリを選択")
+                .navigationTitle(envEditMode?.wrappedValue.isEditing == false ? "起動アプリを選択" : "編集")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden(true)
                 .toolbar {
