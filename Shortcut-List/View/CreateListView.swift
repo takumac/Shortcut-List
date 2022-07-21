@@ -21,15 +21,15 @@ struct CreateListView: View {
             ZStack {
                 VStack {
                     TextField("タイトル", text: $viewModel.listTitle)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
+                        .textFieldStyle(SecondaryNeumorphicStyle())
                     TextField("説明", text: $viewModel.listDescription)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
+                        .textFieldStyle(SecondaryNeumorphicStyle())
                     List(viewModel.applicationURLs) { listItem in
                         CreateListViewRow(applicationURL: listItem)
                     }

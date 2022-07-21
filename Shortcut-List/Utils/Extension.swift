@@ -12,10 +12,14 @@ extension Color {
     // CustomUnderLine
     static let customUnderLineColor = Color("CustomUnderLine/underLineColor")
     // NeumorphicStyle
-    static let neumorphicTextColor = Color("NeumorphicStyle/neumorphicTextColor")
-    static let neumorphicBackgroundColor = Color("NeumorphicStyle/background")
-    static let neumorphicDarkShadowColor = Color("NeumorphicStyle/darkShadow")
-    static let neumorphicLightShadowColor = Color("NeumorphicStyle/lightShadow")
+    static let primaryNeumorphicTextColor = Color("NeumorphicStyle/Primary/neumorphicTextColor")
+    static let primaryNeumorphicBackgroundColor = Color("NeumorphicStyle/Primary/background")
+    static let primaryNeumorphicDarkShadowColor = Color("NeumorphicStyle/Primary/darkShadow")
+    static let primaryNeumorphicLightShadowColor = Color("NeumorphicStyle/Primary/lightShadow")
+    static let secondaryNeumorphicTextColor = Color("NeumorphicStyle/Secondary/neumorphicTextColor")
+    static let secondaryNeumorphicBackgroundColor = Color("NeumorphicStyle/Secondary/background")
+    static let secondaryNeumorphicDarkShadowColor = Color("NeumorphicStyle/Secondary/darkShadow")
+    static let secondaryNneumorphicLightShadowColor = Color("NeumorphicStyle/Secondary/lightShadow")
 }
 
 extension Identifiable where Self: Hashable {

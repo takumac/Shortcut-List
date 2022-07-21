@@ -22,7 +22,7 @@ struct ListDetailView: View {
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
-                        .textFieldStyle(NeumorphicStyle())
+                        .textFieldStyle(PrimaryNeumorphicStyle())
                 } else {
                     Text(viewModel.listTitle)
                         .padding()
@@ -33,7 +33,7 @@ struct ListDetailView: View {
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
-                        .textFieldStyle(NeumorphicStyle())
+                        .textFieldStyle(PrimaryNeumorphicStyle())
                 } else {
                     Text(viewModel.listDescription)
                         .padding()
