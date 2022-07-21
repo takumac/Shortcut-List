@@ -20,6 +20,9 @@ extension Color {
     static let secondaryNeumorphicBackgroundColor = Color("NeumorphicStyle/Secondary/background")
     static let secondaryNeumorphicDarkShadowColor = Color("NeumorphicStyle/Secondary/darkShadow")
     static let secondaryNneumorphicLightShadowColor = Color("NeumorphicStyle/Secondary/lightShadow")
+    // FloatingButton
+    static let floatingButtonBackgroundColor = Color("FloatingButton/background")
+    static let floatingButtonShadowColor = Color("FloatingButton/shadow")
 }
 
 extension Identifiable where Self: Hashable {

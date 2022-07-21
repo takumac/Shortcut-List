@@ -25,9 +25,9 @@ struct CreateListViewPresentedButton: View {
                         .font(.system(size: 24))
                         .foregroundColor(.white)
                         .frame(width: 60, height: 60)
-                        .background(Color.blue)
+                        .background(Color.floatingButtonBackgroundColor)
                         .cornerRadius(30.0)
-                        .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                        .shadow(color: .floatingButtonShadowColor, radius: 3, x: 3, y: 3)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 20))
                 }
                 .sheet(isPresented: $isShowingView, onDismiss: {
