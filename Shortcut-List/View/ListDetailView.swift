@@ -21,18 +21,29 @@ struct ListDetailView: View {
     var body: some View {
         ZStack {
             VStack {
-                TextField("タイトルを入力してください", text: $viewModel.listTitle)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.top)
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .disabled(isDisabled)
-                TextField("補足説明", text: $viewModel.listDescription)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.top)
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .disabled(isDisabled)
+                if envEditMode?.wrappedValue.isEditing == true {
+                    TextField("タイトル", text: $viewModel.listTitle)
+                        .padding(.top)
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .textFieldStyle(NeumorphicStyle())
+                } else {
+                    Text(viewModel.listTitle)
+                        .padding()
+                        .font(.largeTitle)
+                }
+                if envEditMode?.wrappedValue.isEditing == true {
+                    TextField("補足説明", text: $viewModel.listDescription)
+                        .padding(.top)
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .textFieldStyle(NeumorphicStyle())
+                } else {
+                    Text(viewModel.listDescription)
+                        .padding()
+                        .font(.title)
+                }
+                
                 List {
                     ForEach(viewModel.applicationURLs, id: \.id) { listItem in
                         ListDetailViewRow(applicationURL: listItem)
