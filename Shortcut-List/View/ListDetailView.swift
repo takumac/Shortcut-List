@@ -14,10 +14,6 @@ struct ListDetailView: View {
     
     @ObservedObject var viewModel: ListDetailViewModel
     
-    // タイトルと補足説明の入力可・不可の制御に使用
-    // TextFieldのdisabledにenvEditModeを使うと正常に動作しなかったため
-    @State var isDisabled = true
-    
     var body: some View {
         ZStack {
             VStack {
@@ -85,7 +81,6 @@ struct ListDetailView: View {
                                         envEditMode?.wrappedValue = .inactive
                                     } else {
                                         envEditMode?.wrappedValue = .active
-                                        self.isDisabled.toggle()
                                     }
                                 }
                             }) {
