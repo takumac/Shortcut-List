@@ -29,7 +29,7 @@ struct ListDetailView: View {
                         .font(.largeTitle)
                 }
                 if envEditMode?.wrappedValue.isEditing == true {
-                    TextField("補足説明", text: $viewModel.listDescription)
+                    TextField("説明", text: $viewModel.listDescription)
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
