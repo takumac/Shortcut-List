@@ -65,7 +65,6 @@ struct MainView: View {
                                 }
                             }) {
                                 if editMode.isEditing == true {
-                                    // TODO: 編集が完了した時の動作を実装する
                                     Text("完了")
                                 } else {
                                     Text("編集")

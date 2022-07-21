@@ -51,10 +51,8 @@ struct CreateListView: View {
                                         title: Text(""),
                                         message: Text("編集内容を破棄します。\nよろしいですか？"),
                                         primaryButton: .cancel(Text("キャンセル")) {
-                                            print("キャンセル押された")
                                         },
                                         secondaryButton: .destructive(Text("破棄")) {
-                                            print("破棄押された")
                                             dismiss()
                                         })
                                 }
@@ -71,7 +69,6 @@ struct CreateListView: View {
                                         title: Text(""),
                                         message: Text("新規リストとして追加します。\nよろしいですか？"),
                                         primaryButton: .cancel(Text("キャンセル")) {
-                                            print("キャンセル押された")
                                         },
                                         secondaryButton: .default(Text("追加")) {
                                             viewModel.addButtonTap()
