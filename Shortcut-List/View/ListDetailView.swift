@@ -14,6 +14,8 @@ struct ListDetailView: View {
     
     @ObservedObject var viewModel: ListDetailViewModel
     
+    @State private var showingAppOpenError = false
+    
     var body: some View {
         ZStack {
             VStack {
@@ -44,7 +46,24 @@ struct ListDetailView: View {
                     ForEach(viewModel.applicationURLs, id: \.id) { listItem in
                         ListDetailViewRow(applicationURL: listItem)
                             .onTapGesture {
-                                viewModel.tapApplication(applicationURL: listItem)
+                                // 本来はviewModel経由でアプリを実行したい。Alertを出す方法が思いつかない。
+//                                if !viewModel.tapApplication(applicationURL: listItem) {
+//                                    showingAppOpenError.toggle()
+//                                }
+                                if let url = URL(string: listItem.appUrl + "://") {
+                                    UIApplication.shared.open(url, options: [:], completionHandler: { results in
+                                            if !results {
+                                                showingAppOpenError.toggle()
+                                            }
+                                        }
+                                    )
+                                } else {
+                                    showingAppOpenError.toggle()
+                                }
+                            }
+                            .alert(isPresented: $showingAppOpenError) {
+                                Alert(title: Text("起動エラー"),
+                                      message: Text("URLに誤りがあります\nもしくはアプリが未インストールです"))
                             }
                     }
                     .onDelete(perform: envEditMode?.wrappedValue.isEditing == true ? { indexSet in

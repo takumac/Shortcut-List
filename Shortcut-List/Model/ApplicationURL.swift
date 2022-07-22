@@ -36,17 +36,14 @@ class ApplicationURL: Object, Identifiable, Codable {
     
     func openApp() {
         guard let url = URL(string: appUrl + "://") else {
-            // TODO: URLオブジェクト作成に失敗した時の処理を実装する
             return
         }
         
         UIApplication.shared.open(url, options: [:], completionHandler: { results in
-            if results {
-                //TODO: 遷移が成功した時の挙動
-            } else {
-                // TODO: 遷移が失敗した時の挙動　ダイアログを出す
+                if !results {
+                    // TODO: アプリが起動できなかった時の動作を実装する
+                }
             }
-                                  }
         )
     }
 }

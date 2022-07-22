@@ -46,5 +46,9 @@
     {
         "app_title" : "リマインダー",
         "app_url" : "x-apple-reminderkit"
+    },
+    {
+        "app_title" : "Youtube",
+        "app_url" : "youtube"
     }
 ]

@@ -33,6 +33,9 @@
 		E1434004283E89B70007680B /* SelectAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1434003283E89B70007680B /* SelectAppViewModel.swift */; };
 		E143400A283FD7200007680B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1434009283FD7200007680B /* Extension.swift */; };
 		E143400C283FDEB10007680B /* CreateListViewPresentedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E143400B283FDEB10007680B /* CreateListViewPresentedButton.swift */; };
+		E152D14A28885DB00043D6B8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E152D14928885DB00043D6B8 /* Color.xcassets */; };
+		E152D14C28886A890043D6B8 /* CustomUnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D14B28886A890043D6B8 /* CustomUnderLine.swift */; };
+		E152D14E2888BD190043D6B8 /* NeumorphicStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		E1434009283FD7200007680B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E143400B283FDEB10007680B /* CreateListViewPresentedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateListViewPresentedButton.swift; sourceTree = "<group>"; };
 		E143400D284FA9810007680B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E152D14928885DB00043D6B8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		E152D14B28886A890043D6B8 /* CustomUnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnderLine.swift; sourceTree = "<group>"; };
+		E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicStyle.swift; sourceTree = "<group>"; };
 		EA4F716A93D352B1C3695837 /* Pods_Shortcut_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shortcut_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				E112DC872858FB61005D7930 /* applicationinfomation.json */,
+				E152D14B28886A890043D6B8 /* CustomUnderLine.swift */,
+				E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -135,6 +143,7 @@
 				E13D2470283BDFE90088E632 /* Shortcut_ListApp.swift */,
 				E13D2472283BDFE90088E632 /* ContentView.swift */,
 				E13D2474283BDFEA0088E632 /* Assets.xcassets */,
+				E152D14928885DB00043D6B8 /* Color.xcassets */,
 				E13D2476283BDFEA0088E632 /* Preview Content */,
 			);
 			path = "Shortcut-List";
@@ -257,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13D2478283BDFEA0088E632 /* Preview Assets.xcassets in Resources */,
+				E152D14A28885DB00043D6B8 /* Color.xcassets in Resources */,
 				E112DC882858FB61005D7930 /* applicationinfomation.json in Resources */,
 				E13D2475283BDFEA0088E632 /* Assets.xcassets in Resources */,
 			);
@@ -328,9 +338,11 @@
 				E13D2487283BE2500088E632 /* ApplicationURL.swift in Sources */,
 				E13D2471283BDFE90088E632 /* Shortcut_ListApp.swift in Sources */,
 				E143400C283FDEB10007680B /* CreateListViewPresentedButton.swift in Sources */,
+				E152D14C28886A890043D6B8 /* CustomUnderLine.swift in Sources */,
 				E13D2485283BE2210088E632 /* MainViewModel.swift in Sources */,
 				E143400A283FD7200007680B /* Extension.swift in Sources */,
 				E1433FF8283D47310007680B /* ListDetailView.swift in Sources */,
+				E152D14E2888BD190043D6B8 /* NeumorphicStyle.swift in Sources */,
 				E1434002283E89A30007680B /* SelectAppViewRow.swift in Sources */,
 				E1433FFC283D47590007680B /* ListDetailViewModel.swift in Sources */,
 			);
@@ -462,7 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Shortcut-List/Preview Content\"";
-				DEVELOPMENT_TEAM = 9W82QL85G8;
+				DEVELOPMENT_TEAM = 52FPZ2M6AZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Shortcut-List/Info.plist";
@@ -476,7 +488,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.takumi.sakai..Shortcut-List";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.takumi.sakai.dev.Shortcut-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -493,7 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Shortcut-List/Preview Content\"";
-				DEVELOPMENT_TEAM = 9W82QL85G8;
+				DEVELOPMENT_TEAM = 52FPZ2M6AZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Shortcut-List/Info.plist";
@@ -507,7 +519,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.takumi.sakai..Shortcut-List";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.takumi.sakai.dev.Shortcut-List";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
