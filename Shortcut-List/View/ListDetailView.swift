@@ -62,8 +62,7 @@ struct ListDetailView: View {
                                 }
                             }
                             .alert(isPresented: $showingAppOpenError) {
-                                Alert(title: Text("起動エラー"),
-                                      message: Text("URLに誤りがあります\nもしくはアプリが未インストールです"))
+                                Alert(title: Text("アプリ起動エラー"))
                             }
                     }
                     .onDelete(perform: envEditMode?.wrappedValue.isEditing == true ? { indexSet in
