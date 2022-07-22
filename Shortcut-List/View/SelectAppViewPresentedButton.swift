@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct SelectAppViewPresentedButton: View {
-    @State var isShowingView: Bool = false
+    @State var isShowingConfirmationDialog: Bool = false
+    @State var isShowingSelectAppView: Bool = false
+    @State var isShowingCreateUrlView: Bool = false
+    
     @Binding var applicationURLs: [ApplicationURL]
     
     //モーダル表示から戻る際に実行するクロージャ
@@ -20,7 +23,7 @@ struct SelectAppViewPresentedButton: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    isShowingView.toggle()
+                    isShowingConfirmationDialog.toggle()
                 }) {
                     Image(systemName: "plus.circle.fill")
                         .font(.system(size: 24))
@@ -31,13 +34,30 @@ struct SelectAppViewPresentedButton: View {
                         .shadow(color: .floatingButtonShadowColor, radius: 3, x: 3, y: 3)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 16.0, trailing: 20))
                 }
-                .sheet(isPresented: $isShowingView, onDismiss: {
+                .confirmationDialog("タイトルなし", isPresented: $isShowingConfirmationDialog, actions: {
+                    Button("アプリを選択") {
+                        isShowingSelectAppView.toggle()
+                    }
+                    Button("URLを作成") {
+                        isShowingCreateUrlView.toggle()
+                    }
+                })
+                // アプリ選択画面へ
+                .sheet(isPresented: $isShowingSelectAppView, onDismiss: {
                     if let dismissProc = self.onDismissProc {
                         dismissProc()
                     }
                 }) {
                     SelectAppView(applicationURLs: $applicationURLs)
                 }
+                // URL作成画面へ
+                .sheet(isPresented: $isShowingCreateUrlView, onDismiss: {
+                    if let dismissProc = self.onDismissProc {
+                        dismissProc()
+                    }
+                }, content: {
+                    CreateURLView(applicationURLs: $applicationURLs)
+                })
             }
         }
     }

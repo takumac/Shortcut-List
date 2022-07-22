@@ -23,6 +23,9 @@ extension Color {
     // FloatingButton
     static let floatingButtonBackgroundColor = Color("FloatingButton/background")
     static let floatingButtonShadowColor = Color("FloatingButton/shadow")
+    // CustomButtonStyle
+    static let customButtonBackgroundColor = Color("CustomButtonStyle/background")
+    static let customButtonOnTapBackgroundColor = Color("CustomButtonStyle/onTapBackground")
 }
 
 extension Identifiable where Self: Hashable {
