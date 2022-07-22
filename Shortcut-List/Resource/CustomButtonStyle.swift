@@ -16,5 +16,6 @@ struct CustomButtonStyle: ButtonStyle {
             // タップ中かどうかで背景色を変更する
             .background(configuration.isPressed ? Color.customButtonOnTapBackgroundColor : Color.customButtonBackgroundColor)
             .cornerRadius(4)
+            .shadow(color: .customButtonShadowColor, radius: 4, x: 0, y: 4)
     }
 }

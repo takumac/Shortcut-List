@@ -35,6 +35,7 @@ struct CreateURLView: View {
                     .padding(.leading)
                     .padding(.trailing)
                     .textFieldStyle(SecondaryNeumorphicStyle())
+                Spacer().frame(height: 150)
                 Button("作成") {
                     applicationURLs.append(ApplicationURL(
                                             appTitle: viewModel.appTitle,
