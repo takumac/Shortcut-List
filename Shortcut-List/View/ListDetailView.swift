@@ -85,7 +85,7 @@ struct ListDetailView: View {
                                 envDismiss()
                             }) {
                                 if envEditMode?.wrappedValue.isEditing == false {
-                                    Image(systemName: "arrow.backward")
+                                    Image(systemName: "chevron.backward")
                                 }
                             }
                             .disabled(envEditMode?.wrappedValue.isEditing == true)
