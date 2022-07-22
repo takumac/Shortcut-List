@@ -40,10 +40,13 @@ class ApplicationURL: Object, Identifiable, Codable {
             return
         }
         
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: { success in
-                print("open \(success)")
-            })
-        }
+        UIApplication.shared.open(url, options: [:], completionHandler: { results in
+            if results {
+                //TODO: 遷移が成功した時の挙動
+            } else {
+                // TODO: 遷移が失敗した時の挙動　ダイアログを出す
+            }
+                                  }
+        )
     }
 }
