@@ -10,22 +10,55 @@ import SwiftUI
 struct AppRunErrorHelpView: View {
     @Environment(\.dismiss) var envDismiss
     
+    @State var selectTab = 1
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationTitle("アプリ起動エラーについて")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(
-                        action: {
-                            envDismiss()
-                        }) {
-                            Image(systemName: "chevron.backward")
-                        }
-                }
+        VStack {
+            Text("以下についてご確認ください")
+                .padding()
+            TabbarView(selectedTab: $selectTab)
+            TabView(selection: $selectTab) {
+                Text("アプリ未インストール")
+                    .tag(1)
+                Text("URL誤り")
+                    .tag(2)
             }
+        }
+        .navigationTitle("アプリ起動エラーについて")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(
+                    action: {
+                        envDismiss()
+                    }) {
+                        Image(systemName: "chevron.backward")
+                    }
+            }
+        }
     }
+}
+
+struct TabbarView: View {
+    @Binding var selectedTab : Int
+        var body: some View {
+            HStack {
+                Spacer()
+                Text("アプリ未インストール")
+                .foregroundColor(selectedTab == 2 ? Color.blue : Color.gray)
+                .onTapGesture {
+                    self.selectedTab = 1
+                }
+                Spacer()
+                Text("URL誤り")
+                .foregroundColor(selectedTab == 1 ? Color.blue : Color.gray)
+                .onTapGesture {
+                    self.selectedTab = 2
+                }
+                Spacer()
+            }
+        }
 }
 
 //struct URLErrorHelpView_Previews: PreviewProvider {
