@@ -8,57 +8,59 @@
 import SwiftUI
 
 struct HelpView: View {
-    @Environment(\.dismiss) var envDismiss
+    @Binding var isActive: Bool
     
     var body: some View {
-        Form {
-            Section(header: Text("Help")) {
-                NavigationLink(destination: AppRunErrorHelpView()) {
-                    Text("アプリ起動エラーについて")
+        NavigationView {
+            Form {
+                Section(header: Text("Help")) {
+                    NavigationLink(destination: AppRunErrorHelpView()) {
+                        Text("アプリ起動エラーについて")
+                    }
+                    NavigationLink(destination: CreateURLHelpView()) {
+                        Text("URL作成について")
+                    }
+                    
                 }
-                NavigationLink(destination: CreateURLHelpView()) {
-                    Text("URL作成について")
-                }
-                
-            }
-            .textCase(.none)
-            Section(header: Text("Contact")) {
-                HStack {
-                    Link(destination: URL(string: "https://forms.gle/2SzZ87Tsqvr3jX7L6")!) {
-                        Text("お問い合わせ")
-                            .foregroundColor(Color.helpViewLinkTextColor)
+                .textCase(.none)
+                Section(header: Text("Contact")) {
+                    HStack {
+                        Link(destination: URL(string: "https://forms.gle/2SzZ87Tsqvr3jX7L6")!) {
+                            Text("お問い合わせ")
+                                .foregroundColor(Color.helpViewLinkTextColor)
+                        }
                     }
                 }
-            }
-            .textCase(.none)
-            Section(header: Text("Info")) {
-                HStack {
-                    Text("Developer")
-                    Spacer()
-                    Link(destination: URL(string: "https://twitter.com/sake_enenen")!) {
-                        Text("Takumi Sakai")
-                            .foregroundColor(Color.helpViewLinkTextColor)
+                .textCase(.none)
+                Section(header: Text("Info")) {
+                    HStack {
+                        Text("Developer")
+                        Spacer()
+                        Link(destination: URL(string: "https://twitter.com/sake_enenen")!) {
+                            Text("Takumi Sakai")
+                                .foregroundColor(Color.helpViewLinkTextColor)
+                        }
+                    }
+                    HStack {
+                        Text("Version")
+                        Spacer()
+                        Text("1.0.0")
                     }
                 }
-                HStack {
-                    Text("Version")
-                    Spacer()
-                    Text("1.0.0")
-                }
+                .textCase(.none)
             }
-            .textCase(.none)
-        }
-        .navigationTitle("ヘルプ")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(
-                    action: {
-                        envDismiss()
-                    }) {
-                        Image(systemName: "chevron.backward")
-                    }
+            .navigationTitle("ヘルプ")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(
+                        action: {
+                            isActive.toggle()
+                        }) {
+                            Image(systemName: "xmark")
+                        }
+                }
             }
         }
     }

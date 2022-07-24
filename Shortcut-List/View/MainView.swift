@@ -14,6 +14,7 @@ struct MainView: View {
      NavigationViewを用いると、NavigationViewの外側と内側で別画面扱いになり、正しくeditModeの値が取得できないため、外側で定義した editModeをNavigationViewの内側の環境変数とする
      **/
     @State var editMode: EditMode = .inactive
+    @State var isShowingHelpView = false
     
     var body: some View {
         NavigationView {
@@ -38,13 +39,18 @@ struct MainView: View {
                 .navigationTitle("Shortcut List")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: HelpView()) {
+                        Button(action: {
+                            isShowingHelpView.toggle()
+                        }, label: {
                             if editMode.isEditing == false {
                                 Image(systemName: "questionmark.circle")
                                     .foregroundColor(.blue)
                             }
-                        }
+                        })
                         .disabled(editMode.isEditing)
+                        .fullScreenCover(isPresented: $isShowingHelpView) {
+                            HelpView(isActive: $isShowingHelpView)
+                        }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(
