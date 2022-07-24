@@ -40,7 +40,7 @@ struct AppRunErrorHelpView: View {
     }
 }
 
-struct TabbarView: View {
+private struct TabbarView: View {
     @Binding var selectedTab : Int
         var body: some View {
             HStack {
