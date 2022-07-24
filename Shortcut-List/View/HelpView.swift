@@ -16,6 +16,10 @@ struct HelpView: View {
                 NavigationLink(destination: AppRunErrorHelpView()) {
                     Text("アプリ起動エラーについて")
                 }
+                NavigationLink(destination: CreateURLHelpView()) {
+                    Text("URL作成について")
+                }
+                
             }
             .textCase(.none)
             Section(header: Text("Contact")) {
