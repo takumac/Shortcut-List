@@ -38,20 +38,13 @@ struct MainView: View {
                 .navigationTitle("Shortcut List")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button(
-                            action: {
-                                withAnimation() {
-                                    // TODO: 歯車マークを押した時の動作を実装する
-                                    print("歯車ボタンを押した")
-                                }
-                                
-                            }) {
-                                if editMode.isEditing == false {
-                                    Image(systemName: "gearshape.fill")
-                                        .foregroundColor(.blue)
-                                }
+                        NavigationLink(destination: HelpView()) {
+                            if editMode.isEditing == false {
+                                Image(systemName: "questionmark.circle")
+                                    .foregroundColor(.blue)
                             }
-                            .disabled(editMode.isEditing)
+                        }
+                        .disabled(editMode.isEditing)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(

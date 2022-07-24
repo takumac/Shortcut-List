@@ -43,7 +43,7 @@ final public class ResourceManager {
         }
         // 対象となるアプリケーションの情報をメンバ変数に格納
         for applicationURL in applicationUrls {
-            allApplicationURL.append(ApplicationURL(appTitle: applicationURL.appTitle, appUrl: applicationURL.appUrl, /* TODO:一時的に0を指定 */order: 0))
+            allApplicationURL.append(ApplicationURL(appTitle: applicationURL.appTitle, appUrl: applicationURL.appUrl, /* 一時的に0を指定 */order: 0))
         }
     }
     

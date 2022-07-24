@@ -27,6 +27,8 @@ extension Color {
     static let customButtonBackgroundColor = Color("CustomButtonStyle/background")
     static let customButtonOnTapBackgroundColor = Color("CustomButtonStyle/onTapBackground")
     static let customButtonShadowColor = Color("CustomButtonStyle/shadow")
+    // HelpViewColor
+    static let helpViewLinkTextColor = Color("DeveloperLinkTextColor")
 }
 
 extension Identifiable where Self: Hashable {
