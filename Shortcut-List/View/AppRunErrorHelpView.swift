@@ -18,9 +18,9 @@ struct AppRunErrorHelpView: View {
                 .padding()
             TabbarView(selectedTab: $selectTab)
             TabView(selection: $selectTab) {
-                Text("アプリ未インストール")
+                NotInstallAppView()
                     .tag(1)
-                Text("URL誤り")
+                URLErrorView()
                     .tag(2)
             }
         }

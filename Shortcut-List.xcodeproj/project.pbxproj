@@ -43,6 +43,8 @@
 		E1FBBD63288FB4A200053659 /* CreateURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD62288FB4A200053659 /* CreateURLViewModel.swift */; };
 		E1FBBD65288FB4BA00053659 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD64288FB4BA00053659 /* Wrapper.swift */; };
 		E1FBBD67288FB4F800053659 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */; };
+		E1FBBD69288FBAC900053659 /* NotInstallAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD68288FBAC900053659 /* NotInstallAppView.swift */; };
+		E1FBBD6B288FBB0B00053659 /* URLErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD6A288FBB0B00053659 /* URLErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		E1FBBD62288FB4A200053659 /* CreateURLViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateURLViewModel.swift; sourceTree = "<group>"; };
 		E1FBBD64288FB4BA00053659 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		E1FBBD68288FBAC900053659 /* NotInstallAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotInstallAppView.swift; sourceTree = "<group>"; };
+		E1FBBD6A288FBB0B00053659 /* URLErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLErrorView.swift; sourceTree = "<group>"; };
 		EA4F716A93D352B1C3695837 /* Pods_Shortcut_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shortcut_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,10 +189,12 @@
 				E1433FFF283E898D0007680B /* SelectAppView.swift */,
 				E1434001283E89A30007680B /* SelectAppViewRow.swift */,
 				E13D248E283BE5EF0088E632 /* SelectAppViewPresentedButton.swift */,
-				E1FBBD5A288FB44E00053659 /* AppRunErrorHelpView.swift */,
-				E1FBBD5C288FB46E00053659 /* CreateURLHelpView.swift */,
 				E1FBBD5E288FB47C00053659 /* CreateURLView.swift */,
 				E1FBBD60288FB48700053659 /* HelpView.swift */,
+				E1FBBD5A288FB44E00053659 /* AppRunErrorHelpView.swift */,
+				E1FBBD68288FBAC900053659 /* NotInstallAppView.swift */,
+				E1FBBD6A288FBB0B00053659 /* URLErrorView.swift */,
+				E1FBBD5C288FB46E00053659 /* CreateURLHelpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,8 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				E13D2484283BE2210088E632 /* MainViewModel.swift */,
-				E13D2492283C568D0088E632 /* CreateListViewModel.swift */,
 				E1433FFB283D47590007680B /* ListDetailViewModel.swift */,
+				E13D2492283C568D0088E632 /* CreateListViewModel.swift */,
 				E1434003283E89B70007680B /* SelectAppViewModel.swift */,
 				E1FBBD62288FB4A200053659 /* CreateURLViewModel.swift */,
 			);
@@ -364,8 +370,10 @@
 				E1FBBD61288FB48700053659 /* HelpView.swift in Sources */,
 				E1FBBD67288FB4F800053659 /* CustomButtonStyle.swift in Sources */,
 				E13D2487283BE2500088E632 /* ApplicationURL.swift in Sources */,
+				E1FBBD69288FBAC900053659 /* NotInstallAppView.swift in Sources */,
 				E13D2471283BDFE90088E632 /* Shortcut_ListApp.swift in Sources */,
 				E143400C283FDEB10007680B /* CreateListViewPresentedButton.swift in Sources */,
+				E1FBBD6B288FBB0B00053659 /* URLErrorView.swift in Sources */,
 				E152D14C28886A890043D6B8 /* CustomUnderLine.swift in Sources */,
 				E13D2485283BE2210088E632 /* MainViewModel.swift in Sources */,
 				E143400A283FD7200007680B /* Extension.swift in Sources */,

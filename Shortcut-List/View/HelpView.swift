@@ -13,7 +13,7 @@ struct HelpView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Help")) {
+                Section("Help") {
                     NavigationLink(destination: AppRunErrorHelpView()) {
                         Text("アプリ起動エラーについて")
                     }
@@ -23,7 +23,7 @@ struct HelpView: View {
                     
                 }
                 .textCase(.none)
-                Section(header: Text("Contact")) {
+                Section("Contact") {
                     HStack {
                         Link(destination: URL(string: "https://forms.gle/2SzZ87Tsqvr3jX7L6")!) {
                             Text("お問い合わせ")
@@ -32,7 +32,7 @@ struct HelpView: View {
                     }
                 }
                 .textCase(.none)
-                Section(header: Text("Info")) {
+                Section("Info") {
                     HStack {
                         Text("Developer")
                         Spacer()

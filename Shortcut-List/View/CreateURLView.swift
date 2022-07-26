@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct CreateURLView: View {
     
     @Environment(\.dismiss) var dismiss
