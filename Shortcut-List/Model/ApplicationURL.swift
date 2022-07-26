@@ -34,14 +34,14 @@ class ApplicationURL: Object, Identifiable, Codable {
         self.order = order
     }
     
-    func openApp() {
+    func openApp(isErrorOpen: BoolWrapper) {
         guard let url = URL(string: appUrl + "://") else {
             return
         }
         
         UIApplication.shared.open(url, options: [:], completionHandler: { results in
                 if !results {
-                    // TODO: アプリが起動できなかった時の動作を実装する
+                    isErrorOpen.value = true
                 }
             }
         )

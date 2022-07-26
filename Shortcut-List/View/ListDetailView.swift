@@ -46,21 +46,10 @@ struct ListDetailView: View {
                     ForEach(viewModel.applicationURLs, id: \.id) { listItem in
                         ListDetailViewRow(applicationURL: listItem)
                             .onTapGesture {
-                                // 本来はviewModel経由でアプリを実行したい。
-                                // Alertを出す方法が思いつかないため強引にアプリ起動ロジックをviewに持たせた
-//                                viewModel.tapApplication(applicationURL: listItem)
-                                if let url = URL(string: listItem.appUrl + "://") {
-                                    UIApplication.shared.open(url, options: [:], completionHandler: { results in
-                                            if !results {
-                                                showingAppOpenError.toggle()
-                                            }
-                                        }
-                                    )
-                                } else {
-                                    showingAppOpenError.toggle()
-                                }
+                                viewModel.tapApplication(applicationURL: listItem)
+                                viewModel.objectWillChange.send()
                             }
-                            .alert(isPresented: $showingAppOpenError) {
+                            .alert(isPresented: $viewModel.isShowingAppOpenErrorAlert.value) {
                                 Alert(title: Text("アプリ起動エラー"))
                             }
                     }

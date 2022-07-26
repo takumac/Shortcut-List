@@ -13,6 +13,7 @@ class ListDetailViewModel: ObservableObject {
     @Published var listTitle: String
     @Published var listDescription: String
     @Published var applicationURLs: [ApplicationURL]
+    @Published var isShowingAppOpenErrorAlert: BoolWrapper = BoolWrapper(value: false)
     
     // アプリケーションが「追加」された際にショートカットリスト自体を更新するために保持している変数
     var id: UUID
@@ -28,7 +29,11 @@ class ListDetailViewModel: ObservableObject {
     }
     
     func tapApplication(applicationURL: ApplicationURL) {
-        applicationURL.openApp()
+        applicationURL.openApp(isErrorOpen: self.isShowingAppOpenErrorAlert)
+    }
+    
+    func tapAppOpenErrorAlert() {
+        self.isShowingAppOpenErrorAlert = BoolWrapper(value: !self.isShowingAppOpenErrorAlert.value)
     }
     
     func updateShortcutList() {
