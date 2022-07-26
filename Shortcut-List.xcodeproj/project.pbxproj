@@ -36,6 +36,13 @@
 		E152D14A28885DB00043D6B8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E152D14928885DB00043D6B8 /* Color.xcassets */; };
 		E152D14C28886A890043D6B8 /* CustomUnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D14B28886A890043D6B8 /* CustomUnderLine.swift */; };
 		E152D14E2888BD190043D6B8 /* NeumorphicStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */; };
+		E1FBBD5B288FB44E00053659 /* AppRunErrorHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD5A288FB44E00053659 /* AppRunErrorHelpView.swift */; };
+		E1FBBD5D288FB46E00053659 /* CreateURLHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD5C288FB46E00053659 /* CreateURLHelpView.swift */; };
+		E1FBBD5F288FB47C00053659 /* CreateURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD5E288FB47C00053659 /* CreateURLView.swift */; };
+		E1FBBD61288FB48700053659 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD60288FB48700053659 /* HelpView.swift */; };
+		E1FBBD63288FB4A200053659 /* CreateURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD62288FB4A200053659 /* CreateURLViewModel.swift */; };
+		E1FBBD65288FB4BA00053659 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD64288FB4BA00053659 /* Wrapper.swift */; };
+		E1FBBD67288FB4F800053659 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +78,13 @@
 		E152D14928885DB00043D6B8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		E152D14B28886A890043D6B8 /* CustomUnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnderLine.swift; sourceTree = "<group>"; };
 		E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicStyle.swift; sourceTree = "<group>"; };
+		E1FBBD5A288FB44E00053659 /* AppRunErrorHelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRunErrorHelpView.swift; sourceTree = "<group>"; };
+		E1FBBD5C288FB46E00053659 /* CreateURLHelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateURLHelpView.swift; sourceTree = "<group>"; };
+		E1FBBD5E288FB47C00053659 /* CreateURLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateURLView.swift; sourceTree = "<group>"; };
+		E1FBBD60288FB48700053659 /* HelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		E1FBBD62288FB4A200053659 /* CreateURLViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateURLViewModel.swift; sourceTree = "<group>"; };
+		E1FBBD64288FB4BA00053659 /* Wrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
+		E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		EA4F716A93D352B1C3695837 /* Pods_Shortcut_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shortcut_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -109,6 +123,7 @@
 				E112DC872858FB61005D7930 /* applicationinfomation.json */,
 				E152D14B28886A890043D6B8 /* CustomUnderLine.swift */,
 				E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */,
+				E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -170,6 +185,10 @@
 				E1433FFF283E898D0007680B /* SelectAppView.swift */,
 				E1434001283E89A30007680B /* SelectAppViewRow.swift */,
 				E13D248E283BE5EF0088E632 /* SelectAppViewPresentedButton.swift */,
+				E1FBBD5A288FB44E00053659 /* AppRunErrorHelpView.swift */,
+				E1FBBD5C288FB46E00053659 /* CreateURLHelpView.swift */,
+				E1FBBD5E288FB47C00053659 /* CreateURLView.swift */,
+				E1FBBD60288FB48700053659 /* HelpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +200,7 @@
 				E13D2492283C568D0088E632 /* CreateListViewModel.swift */,
 				E1433FFB283D47590007680B /* ListDetailViewModel.swift */,
 				E1434003283E89B70007680B /* SelectAppViewModel.swift */,
+				E1FBBD62288FB4A200053659 /* CreateURLViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -201,6 +221,7 @@
 				E1434009283FD7200007680B /* Extension.swift */,
 				E112DC852858E235005D7930 /* ResourceManager.swift */,
 				E124BA0F286CB3D30090C27A /* RealmManager.swift */,
+				E1FBBD64288FB4BA00053659 /* Wrapper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -325,16 +346,23 @@
 				E13D2493283C568D0088E632 /* CreateListViewModel.swift in Sources */,
 				E1434004283E89B70007680B /* SelectAppViewModel.swift in Sources */,
 				E13D2489283BE2780088E632 /* Data.swift in Sources */,
+				E1FBBD5B288FB44E00053659 /* AppRunErrorHelpView.swift in Sources */,
+				E1FBBD63288FB4A200053659 /* CreateURLViewModel.swift in Sources */,
 				E13D2491283C567C0088E632 /* CreateListView.swift in Sources */,
 				E13D248F283BE5EF0088E632 /* SelectAppViewPresentedButton.swift in Sources */,
+				E1FBBD5F288FB47C00053659 /* CreateURLView.swift in Sources */,
 				E1433FFA283D473E0007680B /* ListDetailViewRow.swift in Sources */,
 				E13D2495283D1A280088E632 /* CreateListViewRow.swift in Sources */,
+				E1FBBD65288FB4BA00053659 /* Wrapper.swift in Sources */,
 				E13D2483283BE1EA0088E632 /* MainView.swift in Sources */,
 				E13D248B283BE29A0088E632 /* ShortcutList.swift in Sources */,
 				E112DC862858E235005D7930 /* ResourceManager.swift in Sources */,
 				E13D248D283BE5DA0088E632 /* MainViewRow.swift in Sources */,
+				E1FBBD5D288FB46E00053659 /* CreateURLHelpView.swift in Sources */,
 				E1434000283E898D0007680B /* SelectAppView.swift in Sources */,
 				E124BA10286CB3D30090C27A /* RealmManager.swift in Sources */,
+				E1FBBD61288FB48700053659 /* HelpView.swift in Sources */,
+				E1FBBD67288FB4F800053659 /* CustomButtonStyle.swift in Sources */,
 				E13D2487283BE2500088E632 /* ApplicationURL.swift in Sources */,
 				E13D2471283BDFE90088E632 /* Shortcut_ListApp.swift in Sources */,
 				E143400C283FDEB10007680B /* CreateListViewPresentedButton.swift in Sources */,
