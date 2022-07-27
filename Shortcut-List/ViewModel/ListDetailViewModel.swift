@@ -14,6 +14,13 @@ class ListDetailViewModel: ObservableObject {
     @Published var listDescription: String
     @Published var applicationURLs: [ApplicationURL]
     @Published var isShowingAppOpenErrorAlert: BoolWrapper = BoolWrapper(value: false)
+    @Published var isValidateError: BoolWrapper = BoolWrapper(value: false)
+    
+    enum ValidateErrorType {
+        case TitleError
+        case DescriptionError
+    }
+    var validateErrorType: ValidateErrorType
     
     // アプリケーションが「追加」された際にショートカットリスト自体を更新するために保持している変数
     var id: UUID
@@ -26,6 +33,7 @@ class ListDetailViewModel: ObservableObject {
         
         self.id = shortcutList.id
         self.order = shortcutList.order
+        self.validateErrorType = .TitleError
     }
     
     func tapApplication(applicationURL: ApplicationURL) {
@@ -126,5 +134,20 @@ class ListDetailViewModel: ObservableObject {
         }
         
         self.applicationURLs.move(fromOffsets: indexSet, toOffset: toOffset)
+    }
+    
+    
+    /**
+     編集が行われた時のバリデーションメソッド
+     */
+    func validateCheck() {
+        if self.listTitle.isEmpty {
+            self.validateErrorType = .TitleError
+            self.isValidateError.value = true
+        }
+        if self.listDescription.isEmpty {
+            self.validateErrorType = .DescriptionError
+            self.isValidateError.value = true
+        }
     }
 }

@@ -14,13 +14,11 @@ struct ListDetailView: View {
     
     @ObservedObject var viewModel: ListDetailViewModel
     
-    @State private var showingAppOpenError = false
-    
     var body: some View {
         ZStack {
             VStack {
                 if envEditMode?.wrappedValue.isEditing == true {
-                    TextField("タイトル", text: $viewModel.listTitle)
+                    TextField("タイトル（必須）", text: $viewModel.listTitle)
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
@@ -31,7 +29,7 @@ struct ListDetailView: View {
                         .font(.largeTitle)
                 }
                 if envEditMode?.wrappedValue.isEditing == true {
-                    TextField("説明", text: $viewModel.listDescription)
+                    TextField("説明（必須）", text: $viewModel.listDescription)
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
@@ -46,8 +44,10 @@ struct ListDetailView: View {
                     ForEach(viewModel.applicationURLs, id: \.id) { listItem in
                         ListDetailViewRow(applicationURL: listItem)
                             .onTapGesture {
-                                viewModel.tapApplication(applicationURL: listItem)
-                                viewModel.objectWillChange.send()
+                                if envEditMode?.wrappedValue.isEditing == false {
+                                    viewModel.tapApplication(applicationURL: listItem)
+                                    viewModel.objectWillChange.send()
+                                }
                             }
                             .alert(isPresented: $viewModel.isShowingAppOpenErrorAlert.value) {
                                 Alert(title: Text("アプリ起動エラー"))
@@ -81,14 +81,18 @@ struct ListDetailView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(
                             action: {
-                                viewModel.updateShortcutList()
-                                withAnimation() {
-                                    if envEditMode?.wrappedValue.isEditing == true {
-                                        envEditMode?.wrappedValue = .inactive
-                                    } else {
-                                        envEditMode?.wrappedValue = .active
+                                viewModel.validateCheck()
+                                if !viewModel.isValidateError.value {
+                                    viewModel.updateShortcutList()
+                                    withAnimation() {
+                                        if envEditMode?.wrappedValue.isEditing == true {
+                                            envEditMode?.wrappedValue = .inactive
+                                        } else {
+                                            envEditMode?.wrappedValue = .active
+                                        }
                                     }
                                 }
+                                viewModel.objectWillChange.send()
                             }) {
                                 if envEditMode?.wrappedValue.isEditing == true {
                                     Text("完了")
@@ -96,6 +100,15 @@ struct ListDetailView: View {
                                     Text("編集")
                                 }
                             }
+                            .alert(isPresented: $viewModel.isValidateError.value) {
+                                switch viewModel.validateErrorType {
+                                case .TitleError:
+                                    return Alert(title: Text("タイトルが未入力です"))
+                                case .DescriptionError:
+                                    return Alert(title: Text("説明が未入力です"))
+                                }
+                            }
+
                     }
                 }
             }
