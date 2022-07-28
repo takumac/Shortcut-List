@@ -21,7 +21,7 @@ struct CreateURLView: View {
                     .padding(.top)
                     .padding(.leading)
                     .padding(.trailing)
-                TextField("アプリタイトル", text: $viewModel.appTitle)
+                TextField("アプリタイトル（必須）", text: $viewModel.appTitle)
                     .padding(.leading)
                     .padding(.trailing)
                     .textFieldStyle(SecondaryNeumorphicStyle())
@@ -29,22 +29,32 @@ struct CreateURLView: View {
                     .padding(.top)
                     .padding(.leading)
                     .padding(.trailing)
-                TextField("アプリURL", text: $viewModel.appUrl)
+                TextField("アプリURL（必須）", text: $viewModel.appUrl)
                     .padding(.leading)
                     .padding(.trailing)
                     .textFieldStyle(SecondaryNeumorphicStyle())
                 Spacer().frame(height: 150)
                 Button("作成") {
-                    applicationURLs.append(ApplicationURL(
-                                            appTitle: viewModel.appTitle,
-                                            appUrl: viewModel.appUrl,
-                                            order: self.applicationURLs.count
+                    viewModel.validateCheck()
+                    
+                    if !viewModel.isValidateError {
+                        applicationURLs.append(ApplicationURL(
+                                                appTitle: viewModel.appTitle,
+                                                appUrl: viewModel.appUrl,
+                                                order: self.applicationURLs.count
+                                                )
                                             )
-                                        )
-                    dismiss()
+                        dismiss()
+                    }
                 }
                 .padding()
                 .buttonStyle(CustomButtonStyle())
+                .alert(isPresented: $viewModel.isValidateError) {
+                    switch viewModel.validateErrorType {
+                        case .AppTitleError : return Alert(title: Text("タイトルが未入力です"))
+                        case .AppURLError: return Alert(title: Text("URLが未入力です"))
+                    }
+                }
             }
             .navigationTitle("URLを作成")
             .navigationBarTitleDisplayMode(.inline)
