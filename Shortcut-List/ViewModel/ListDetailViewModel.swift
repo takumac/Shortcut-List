@@ -144,10 +144,12 @@ class ListDetailViewModel: ObservableObject {
         if self.listTitle.isEmpty {
             self.validateErrorType = .TitleError
             self.isValidateError.value = true
+            return
         }
         if self.listDescription.isEmpty {
             self.validateErrorType = .DescriptionError
             self.isValidateError.value = true
+            return
         }
     }
 }

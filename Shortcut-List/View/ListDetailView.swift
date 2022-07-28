@@ -102,10 +102,8 @@ struct ListDetailView: View {
                             }
                             .alert(isPresented: $viewModel.isValidateError.value) {
                                 switch viewModel.validateErrorType {
-                                case .TitleError:
-                                    return Alert(title: Text("タイトルが未入力です"))
-                                case .DescriptionError:
-                                    return Alert(title: Text("説明が未入力です"))
+                                    case .TitleError: return Alert(title: Text("タイトルが未入力です"))
+                                    case .DescriptionError: return Alert(title: Text("説明が未入力です"))
                                 }
                             }
 

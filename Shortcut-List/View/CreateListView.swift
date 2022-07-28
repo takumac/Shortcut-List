@@ -20,12 +20,12 @@ struct CreateListView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    TextField("タイトル", text: $viewModel.listTitle)
+                    TextField("タイトル（必須）", text: $viewModel.listTitle)
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
                         .textFieldStyle(SecondaryNeumorphicStyle())
-                    TextField("説明", text: $viewModel.listDescription)
+                    TextField("説明（必須）", text: $viewModel.listDescription)
                         .padding(.top)
                         .padding(.leading)
                         .padding(.trailing)
@@ -60,20 +60,28 @@ struct CreateListView: View {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button(
                                 action: {
+                                    viewModel.validateCheck()
                                     self.showingCompleteAlert.toggle()
                                 }) {
                                     Text("完了")
                                 }
                                 .alert(isPresented: $showingCompleteAlert) {
-                                    Alert(
-                                        title: Text(""),
-                                        message: Text("新規リストとして追加します。\nよろしいですか？"),
-                                        primaryButton: .cancel(Text("キャンセル")) {
-                                        },
-                                        secondaryButton: .default(Text("追加")) {
-                                            viewModel.addButtonTap()
-                                            dismiss()
-                                        })
+                                    if viewModel.isValidateError {
+                                        switch viewModel.validateErrorType {
+                                            case .TitleError : return Alert(title: Text("タイトルが未入力です"))
+                                            case .DescriptionError: return Alert(title: Text("説明が未入力です"))
+                                        }
+                                    } else {
+                                        return Alert(
+                                            title: Text(""),
+                                            message: Text("新規リストとして追加します。\nよろしいですか？"),
+                                            primaryButton: .cancel(Text("キャンセル")) {
+                                            },
+                                            secondaryButton: .default(Text("追加")) {
+                                                viewModel.addButtonTap()
+                                                dismiss()
+                                            })
+                                    }
                                 }
                         }
                     }
