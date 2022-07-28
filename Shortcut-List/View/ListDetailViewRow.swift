@@ -11,10 +11,7 @@ struct ListDetailViewRow: View {
     var applicationURL: ApplicationURL
     
     var body: some View {
-        HStack {
-            Text(applicationURL.appTitle)
-            Spacer()
-        }
+        Text(applicationURL.appTitle)
     }
 }
 

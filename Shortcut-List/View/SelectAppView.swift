@@ -18,16 +18,20 @@ struct SelectAppView: View {
         NavigationView {
             VStack {
                 List(viewModel.selectableApplicationURLs) { listItem in
-                    ListDetailViewRow(applicationURL: listItem)
-                        .onTapGesture {
-                            applicationURLs.append(ApplicationURL(
-                                                    appTitle: listItem.appTitle,
-                                                    appUrl: listItem.appUrl,
-                                                    order: self.applicationURLs.count
-                                                    )
+                    HStack {
+                        ListDetailViewRow(applicationURL: listItem)
+                        Spacer()
+                    }
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        applicationURLs.append(ApplicationURL(
+                                                appTitle: listItem.appTitle,
+                                                appUrl: listItem.appUrl,
+                                                order: self.applicationURLs.count
                                                 )
-                            dismiss()
-                        }
+                                            )
+                        dismiss()
+                    }
                 }
                 .listStyle(.plain)
                 .padding(.top)

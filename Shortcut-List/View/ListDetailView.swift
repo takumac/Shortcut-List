@@ -42,16 +42,20 @@ struct ListDetailView: View {
                 
                 List {
                     ForEach(viewModel.applicationURLs, id: \.id) { listItem in
-                        ListDetailViewRow(applicationURL: listItem)
-                            .onTapGesture {
-                                if envEditMode?.wrappedValue.isEditing == false {
-                                    viewModel.tapApplication(applicationURL: listItem)
-                                    viewModel.objectWillChange.send()
-                                }
+                        HStack {
+                            ListDetailViewRow(applicationURL: listItem)
+                            Spacer()
+                        }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            if envEditMode?.wrappedValue.isEditing == false {
+                                viewModel.tapApplication(applicationURL: listItem)
+                                viewModel.objectWillChange.send()
                             }
-                            .alert(isPresented: $viewModel.isShowingAppOpenErrorAlert.value) {
-                                Alert(title: Text("アプリ起動エラー"))
-                            }
+                        }
+                        .alert(isPresented: $viewModel.isShowingAppOpenErrorAlert.value) {
+                            Alert(title: Text("アプリ起動エラー"))
+                        }
                     }
                     .onDelete(perform: envEditMode?.wrappedValue.isEditing == true ? { indexSet in
                         viewModel.deleteApplicationURL(offsets: indexSet)
