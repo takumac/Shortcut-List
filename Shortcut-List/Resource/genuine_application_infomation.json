@@ -1,5 +1,73 @@
 [
     {
+        "app_title" : "App Store",
+        "app_url" : "itms-apps://itunes.apple.com"
+    },
+    {
+        "app_title" : "Apple Store",
+        "app_url" : "applestore"
+    },
+    {
+        "app_title" : "iTunes Store",
+        "app_url" : "itms"
+    },
+    {
+        "app_title" : "Podcast",
+        "app_url" : "podcasts"
+    },
+    {
+        "app_title" : "Safari",
+        "app_url" : "http://google.co.jp"
+    },
+    {
+        "app_title" : "TV",
+        "app_url" : "videos"
+    },
+    {
+        "app_title" : "カレンダー",
+        "app_url" : "calshow"
+    },
+    {
+        "app_title" : "写真",
+        "app_url" : "photos-redirect"
+    },
+    {
+        "app_title" : "ショートカット",
+        "app_url" : "shortcuts"
+    },
+    {
+        "app_title" : "診断",
+        "app_url" : "diagnostics"
+    },
+    {
+        "app_title" : "天気",
+        "app_url" : "weather"
+    },
+    {
+        "app_title" : "探す",
+        "app_url" : "findmy"
+    },
+    {
+        "app_title" : "ファイル",
+        "app_url" : "shareddocuments"
+    },
+    {
+        "app_title" : "ブック",
+        "app_url" : "ibooks"
+    },
+    {
+        "app_title" : "ヘルスケア",
+        "app_url" : "x-apple-health"
+    },
+    {
+        "app_title" : "ボイスメモ",
+        "app_url" : "voicememo"
+    },
+    {
+        "app_title" : "マップ",
+        "app_url" : "maps"
+    },
+    {
         "app_title" : "メール",
         "app_url" : "message"
     },
@@ -8,43 +76,23 @@
         "app_url" : "sms"
     },
     {
-        "app_title" : "Music",
+        "app_title" : "ミュージック",
         "app_url" : "music"
     },
     {
-        "app_title" : "写真",
-        "app_url" : "photos-redirect"
+        "app_title" : "メモ",
+        "app_url" : "mobilenotes"
     },
     {
-        "app_title" : "マップ",
-        "app_url" : "maps"
-    },
-    {
-        "app_title" : "AppStore",
-        "app_url" : "itms-apps://itunes.apple.com"
-    },
-    {
-        "app_title" : "iTunesStore",
-        "app_url" : "itms"
-    },
-    {
-        "app_title" : "カレンダー",
-        "app_url" : "calshow"
-    },
-    {
-        "app_title" : "Passbook",
-        "app_url" : "passbook"
-    },
-    {
-        "app_title" : "FaceTime",
-        "app_url" : "videos"
-    },
-    {
-        "app_title" : "Safari",
-        "app_url" : "http://google.co.jp"
+        "app_title" : "ラジオ",
+        "app_url" : "itsradio"
     },
     {
         "app_title" : "リマインダー",
         "app_url" : "x-apple-reminderkit"
+    },
+    {
+        "app_title" : "連絡先",
+        "app_url" : "contact"
     }
 ]
