@@ -16,7 +16,7 @@ final public class ResourceManager {
     public static let shared = ResourceManager()
     
     // JSONファイルから取得できたアプリケーションのURLを全て保持する変数
-    private(set) var allApplicationURL: [ApplicationURL] = []
+    private(set) static var allApplicationURL: [ApplicationURL] = []
     
     
     private init() {
@@ -26,9 +26,9 @@ final public class ResourceManager {
     /**
      * JSONファイルからショートカット対象のアプリケーションの情報を取得する
      */
-    public func decodeAppInfo() {
+    public func decodeAppInfo(jsonFileName: String) {
         // 対象ファイル検索
-        guard let url = Bundle.main.url(forResource: "applicationinfomation", withExtension: "json") else {
+        guard let url = Bundle.main.url(forResource: jsonFileName, withExtension: "json") else {
             fatalError("アプリケーション定義ファイル(JSON)が見つかりません")
         }
         // 対象ファイルをData型プロパティに読み込み
@@ -43,7 +43,7 @@ final public class ResourceManager {
         }
         // 対象となるアプリケーションの情報をメンバ変数に格納
         for applicationURL in applicationUrls {
-            allApplicationURL.append(ApplicationURL(appTitle: applicationURL.appTitle, appUrl: applicationURL.appUrl, /* 一時的に0を指定 */order: 0))
+            ResourceManager.allApplicationURL.append(ApplicationURL(appTitle: applicationURL.appTitle, appUrl: applicationURL.appUrl, /* 一時的に0を指定 */order: 0))
         }
     }
     

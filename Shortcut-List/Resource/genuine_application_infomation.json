@@ -1,17 +1,5 @@
 [
     {
-        "app_title" : "Line",
-        "app_url" : "line"
-    },
-    {
-        "app_title" : "Twitter",
-        "app_url" : "twitter"
-    },
-    {
-        "app_title" : "Instagram",
-        "app_url" : "instagram"
-    },
-    {
         "app_title" : "メール",
         "app_url" : "message"
     },
@@ -44,11 +32,19 @@
         "app_url" : "calshow"
     },
     {
-        "app_title" : "リマインダー",
-        "app_url" : "x-apple-reminderkit"
+        "app_title" : "Passbook",
+        "app_url" : "passbook"
     },
     {
-        "app_title" : "Youtube",
-        "app_url" : "youtube"
+        "app_title" : "FaceTime",
+        "app_url" : "videos"
+    },
+    {
+        "app_title" : "Safari",
+        "app_url" : "http://google.co.jp"
+    },
+    {
+        "app_title" : "リマインダー",
+        "app_url" : "x-apple-reminderkit"
     }
 ]

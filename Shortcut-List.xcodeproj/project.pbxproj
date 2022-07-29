@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		27E334BEF0287A14CD3C90E9 /* Pods_Shortcut_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA4F716A93D352B1C3695837 /* Pods_Shortcut_List.framework */; };
 		E112DC862858E235005D7930 /* ResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E112DC852858E235005D7930 /* ResourceManager.swift */; };
-		E112DC882858FB61005D7930 /* applicationinfomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E112DC872858FB61005D7930 /* applicationinfomation.json */; };
+		E112DC882858FB61005D7930 /* genuine_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E112DC872858FB61005D7930 /* genuine_application_infomation.json */; };
 		E124BA10286CB3D30090C27A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124BA0F286CB3D30090C27A /* RealmManager.swift */; };
 		E13D2471283BDFE90088E632 /* Shortcut_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2470283BDFE90088E632 /* Shortcut_ListApp.swift */; };
 		E13D2473283BDFE90088E632 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2472283BDFE90088E632 /* ContentView.swift */; };
@@ -45,13 +45,17 @@
 		E1FBBD67288FB4F800053659 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */; };
 		E1FBBD69288FBAC900053659 /* NotInstallAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD68288FBAC900053659 /* NotInstallAppView.swift */; };
 		E1FBBD6B288FBB0B00053659 /* URLErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD6A288FBB0B00053659 /* URLErrorView.swift */; };
+		E1FBBD6D28937F6700053659 /* beginning_L_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD6C28937F6700053659 /* beginning_L_application_infomation.json */; };
+		E1FBBD6F28937FF000053659 /* beginning_T_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD6E28937FF000053659 /* beginning_T_application_infomation.json */; };
+		E1FBBD712893825600053659 /* beginning_I_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD702893825600053659 /* beginning_I_application_infomation.json */; };
+		E1FBBD73289382A700053659 /* beginning_Y_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD72289382A700053659 /* beginning_Y_application_infomation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1FF276C7B7E73C6C1DA1C74A /* Pods-Shortcut-List.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shortcut-List.debug.xcconfig"; path = "Target Support Files/Pods-Shortcut-List/Pods-Shortcut-List.debug.xcconfig"; sourceTree = "<group>"; };
 		4BA3B09ED7642882F9D7FEAC /* Pods-Shortcut-List.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shortcut-List.release.xcconfig"; path = "Target Support Files/Pods-Shortcut-List/Pods-Shortcut-List.release.xcconfig"; sourceTree = "<group>"; };
 		E112DC852858E235005D7930 /* ResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceManager.swift; sourceTree = "<group>"; };
-		E112DC872858FB61005D7930 /* applicationinfomation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = applicationinfomation.json; sourceTree = "<group>"; };
+		E112DC872858FB61005D7930 /* genuine_application_infomation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = genuine_application_infomation.json; sourceTree = "<group>"; };
 		E124BA0F286CB3D30090C27A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		E13D246D283BDFE90088E632 /* Shortcut-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shortcut-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13D2470283BDFE90088E632 /* Shortcut_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut_ListApp.swift; sourceTree = "<group>"; };
@@ -89,6 +93,10 @@
 		E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		E1FBBD68288FBAC900053659 /* NotInstallAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotInstallAppView.swift; sourceTree = "<group>"; };
 		E1FBBD6A288FBB0B00053659 /* URLErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLErrorView.swift; sourceTree = "<group>"; };
+		E1FBBD6C28937F6700053659 /* beginning_L_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_L_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD6E28937FF000053659 /* beginning_T_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_T_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD702893825600053659 /* beginning_I_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_I_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD72289382A700053659 /* beginning_Y_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_Y_application_infomation.json; sourceTree = "<group>"; };
 		EA4F716A93D352B1C3695837 /* Pods_Shortcut_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shortcut_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,7 +132,11 @@
 		E112DC892858FC19005D7930 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				E112DC872858FB61005D7930 /* applicationinfomation.json */,
+				E112DC872858FB61005D7930 /* genuine_application_infomation.json */,
+				E1FBBD702893825600053659 /* beginning_I_application_infomation.json */,
+				E1FBBD6C28937F6700053659 /* beginning_L_application_infomation.json */,
+				E1FBBD6E28937FF000053659 /* beginning_T_application_infomation.json */,
+				E1FBBD72289382A700053659 /* beginning_Y_application_infomation.json */,
 				E152D14B28886A890043D6B8 /* CustomUnderLine.swift */,
 				E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */,
 				E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */,
@@ -293,9 +305,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13D2478283BDFEA0088E632 /* Preview Assets.xcassets in Resources */,
+				E1FBBD712893825600053659 /* beginning_I_application_infomation.json in Resources */,
 				E152D14A28885DB00043D6B8 /* Color.xcassets in Resources */,
-				E112DC882858FB61005D7930 /* applicationinfomation.json in Resources */,
+				E112DC882858FB61005D7930 /* genuine_application_infomation.json in Resources */,
+				E1FBBD6F28937FF000053659 /* beginning_T_application_infomation.json in Resources */,
 				E13D2475283BDFEA0088E632 /* Assets.xcassets in Resources */,
+				E1FBBD73289382A700053659 /* beginning_Y_application_infomation.json in Resources */,
+				E1FBBD6D28937F6700053659 /* beginning_L_application_infomation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

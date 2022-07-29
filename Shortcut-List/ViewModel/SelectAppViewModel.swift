@@ -12,6 +12,7 @@ class SelectAppViewModel: ObservableObject {
     @Published var selectableApplicationURLs: [ApplicationURL]
     
     init() {
-        selectableApplicationURLs = ResourceManager.shared.allApplicationURL
+        selectableApplicationURLs = ResourceManager.allApplicationURL
+        
     }
 }

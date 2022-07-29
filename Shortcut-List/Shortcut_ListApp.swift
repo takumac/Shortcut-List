@@ -23,7 +23,11 @@ struct Shortcut_ListApp: App {
     init() {
         // Realm初期設定
         // JSONファイルからショートカット対象のアプリケーションの情報を取得
-        ResourceManager.shared.decodeAppInfo()
+        ResourceManager.shared.decodeAppInfo(jsonFileName: "genuine_application_infomation")
+        ResourceManager.shared.decodeAppInfo(jsonFileName: "beginning_I_application_infomation")
+        ResourceManager.shared.decodeAppInfo(jsonFileName: "beginning_L_application_infomation")
+        ResourceManager.shared.decodeAppInfo(jsonFileName: "beginning_T_application_infomation")
+        ResourceManager.shared.decodeAppInfo(jsonFileName: "beginning_Y_application_infomation")
         
     }
 }
