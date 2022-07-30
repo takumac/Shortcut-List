@@ -1,5 +1,13 @@
 [
     {
+        "app_title" : "TikTok",
+        "app_url" : "tiktok"
+    },
+    {
+        "app_title" : "TimeTree",
+        "app_url" : "timetree"
+    },
+    {
         "app_title" : "Twitter",
         "app_url" : "twitter"
     }

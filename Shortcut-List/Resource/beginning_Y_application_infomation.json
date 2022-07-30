@@ -1,5 +1,45 @@
 [
     {
+        "app_title" : "Yahoo!Japan",
+        "app_url" : "yjipn"
+    },
+    {
+        "app_title" : "Yahoo!メール",
+        "app_url" : "yjmailapp"
+    },
+    {
+        "app_title" : "Yahoo!マップ",
+        "app_url" : "yjmap-x-callback"
+    },
+    {
+        "app_title" : "Yahoo!カレンダー",
+        "app_url" : "yjapppkgcal"
+    },
+    {
+        "app_title" : "Yahoo!カーナビ",
+        "app_url" : "yjcarnavi"
+    },
+    {
+        "app_title" : "Yahoo!ショッピング",
+        "app_url" : "yjshp"
+    },
+    {
+        "app_title" : "Yahoo!ニュース",
+        "app_url" : "yjtrend"
+    },
+    {
+        "app_title" : "Yahoo!乗換案内",
+        "app_url" : "ytransit"
+    },
+    {
+        "app_title" : "Yahoo!天気",
+        "app_url" : "yjweather"
+    },
+    {
+        "app_title" : "Yahoo!知恵袋",
+        "app_url" : "yjchiebukuro"
+    },
+    {
         "app_title" : "Youtube",
         "app_url" : "youtube"
     }

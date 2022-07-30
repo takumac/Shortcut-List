@@ -1,0 +1,23 @@
+
+[
+    {
+        "app_title" : "Skype",
+        "app_url" : "skype"
+    },
+    {
+        "app_title" : "Slack",
+        "app_url" : "slack"
+    },
+    {
+        "app_title" : "SNOW",
+        "app_url" : "snowme"
+    },
+    {
+        "app_title" : "SODA",
+        "app_url" : "soda"
+    },
+    {
+        "app_title" : "Spotify",
+        "app_url" : "spotifywaze"
+    }
+]

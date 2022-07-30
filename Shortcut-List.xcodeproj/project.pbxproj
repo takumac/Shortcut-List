@@ -36,6 +36,10 @@
 		E152D14A28885DB00043D6B8 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E152D14928885DB00043D6B8 /* Color.xcassets */; };
 		E152D14C28886A890043D6B8 /* CustomUnderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D14B28886A890043D6B8 /* CustomUnderLine.swift */; };
 		E152D14E2888BD190043D6B8 /* NeumorphicStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */; };
+		E161BA282894FFC0002A2799 /* japanese_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E161BA272894FFC0002A2799 /* japanese_application_infomation.json */; };
+		E161BA2A289501F1002A2799 /* beginning_S_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E161BA29289501F1002A2799 /* beginning_S_application_infomation.json */; };
+		E161BA2C289533D9002A2799 /* beginning_U_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E161BA2B289533D9002A2799 /* beginning_U_application_infomation.json */; };
+		E161BA2E28953A51002A2799 /* beginning_Z_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E161BA2D28953A51002A2799 /* beginning_Z_application_infomation.json */; };
 		E1FBBD5B288FB44E00053659 /* AppRunErrorHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD5A288FB44E00053659 /* AppRunErrorHelpView.swift */; };
 		E1FBBD5D288FB46E00053659 /* CreateURLHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD5C288FB46E00053659 /* CreateURLHelpView.swift */; };
 		E1FBBD5F288FB47C00053659 /* CreateURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FBBD5E288FB47C00053659 /* CreateURLView.swift */; };
@@ -49,6 +53,17 @@
 		E1FBBD6F28937FF000053659 /* beginning_T_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD6E28937FF000053659 /* beginning_T_application_infomation.json */; };
 		E1FBBD712893825600053659 /* beginning_I_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD702893825600053659 /* beginning_I_application_infomation.json */; };
 		E1FBBD73289382A700053659 /* beginning_Y_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD72289382A700053659 /* beginning_Y_application_infomation.json */; };
+		E1FBBD7528939F1F00053659 /* beginning_A_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD7428939F1F00053659 /* beginning_A_application_infomation.json */; };
+		E1FBBD772893ABA500053659 /* beginning_B_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD762893ABA500053659 /* beginning_B_application_infomation.json */; };
+		E1FBBD792893ADF600053659 /* beginning_P_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD782893ADF600053659 /* beginning_P_application_infomation.json */; };
+		E1FBBD7B2893AFD500053659 /* beginning_D_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD7A2893AFD500053659 /* beginning_D_application_infomation.json */; };
+		E1FBBD7D2893B27A00053659 /* beginning_C_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD7C2893B27A00053659 /* beginning_C_application_infomation.json */; };
+		E1FBBD7F2893B98300053659 /* beginning_F_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD7E2893B98300053659 /* beginning_F_application_infomation.json */; };
+		E1FBBD812893BBF700053659 /* beginning_E_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD802893BBF700053659 /* beginning_E_application_infomation.json */; };
+		E1FBBD832893BEBE00053659 /* beginning_G_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD822893BEBE00053659 /* beginning_G_application_infomation.json */; };
+		E1FBBD852893CE2300053659 /* beginning_K_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD842893CE2300053659 /* beginning_K_application_infomation.json */; };
+		E1FBBD872893D2B700053659 /* beginning_M_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD862893D2B700053659 /* beginning_M_application_infomation.json */; };
+		E1FBBD892893D5E600053659 /* beginning_N_application_infomation.json in Resources */ = {isa = PBXBuildFile; fileRef = E1FBBD882893D5E600053659 /* beginning_N_application_infomation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +99,10 @@
 		E152D14928885DB00043D6B8 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		E152D14B28886A890043D6B8 /* CustomUnderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUnderLine.swift; sourceTree = "<group>"; };
 		E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicStyle.swift; sourceTree = "<group>"; };
+		E161BA272894FFC0002A2799 /* japanese_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = japanese_application_infomation.json; sourceTree = "<group>"; };
+		E161BA29289501F1002A2799 /* beginning_S_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_S_application_infomation.json; sourceTree = "<group>"; };
+		E161BA2B289533D9002A2799 /* beginning_U_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_U_application_infomation.json; sourceTree = "<group>"; };
+		E161BA2D28953A51002A2799 /* beginning_Z_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_Z_application_infomation.json; sourceTree = "<group>"; };
 		E1FBBD5A288FB44E00053659 /* AppRunErrorHelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRunErrorHelpView.swift; sourceTree = "<group>"; };
 		E1FBBD5C288FB46E00053659 /* CreateURLHelpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateURLHelpView.swift; sourceTree = "<group>"; };
 		E1FBBD5E288FB47C00053659 /* CreateURLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateURLView.swift; sourceTree = "<group>"; };
@@ -97,6 +116,17 @@
 		E1FBBD6E28937FF000053659 /* beginning_T_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_T_application_infomation.json; sourceTree = "<group>"; };
 		E1FBBD702893825600053659 /* beginning_I_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_I_application_infomation.json; sourceTree = "<group>"; };
 		E1FBBD72289382A700053659 /* beginning_Y_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_Y_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD7428939F1F00053659 /* beginning_A_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_A_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD762893ABA500053659 /* beginning_B_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_B_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD782893ADF600053659 /* beginning_P_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_P_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD7A2893AFD500053659 /* beginning_D_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_D_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD7C2893B27A00053659 /* beginning_C_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_C_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD7E2893B98300053659 /* beginning_F_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_F_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD802893BBF700053659 /* beginning_E_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_E_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD822893BEBE00053659 /* beginning_G_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_G_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD842893CE2300053659 /* beginning_K_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_K_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD862893D2B700053659 /* beginning_M_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_M_application_infomation.json; sourceTree = "<group>"; };
+		E1FBBD882893D5E600053659 /* beginning_N_application_infomation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beginning_N_application_infomation.json; sourceTree = "<group>"; };
 		EA4F716A93D352B1C3695837 /* Pods_Shortcut_List.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shortcut_List.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,10 +163,25 @@
 			isa = PBXGroup;
 			children = (
 				E112DC872858FB61005D7930 /* genuine_application_infomation.json */,
+				E1FBBD7428939F1F00053659 /* beginning_A_application_infomation.json */,
+				E1FBBD762893ABA500053659 /* beginning_B_application_infomation.json */,
+				E1FBBD7C2893B27A00053659 /* beginning_C_application_infomation.json */,
+				E1FBBD7A2893AFD500053659 /* beginning_D_application_infomation.json */,
+				E1FBBD802893BBF700053659 /* beginning_E_application_infomation.json */,
+				E1FBBD7E2893B98300053659 /* beginning_F_application_infomation.json */,
+				E1FBBD822893BEBE00053659 /* beginning_G_application_infomation.json */,
 				E1FBBD702893825600053659 /* beginning_I_application_infomation.json */,
+				E1FBBD842893CE2300053659 /* beginning_K_application_infomation.json */,
 				E1FBBD6C28937F6700053659 /* beginning_L_application_infomation.json */,
+				E1FBBD862893D2B700053659 /* beginning_M_application_infomation.json */,
+				E1FBBD882893D5E600053659 /* beginning_N_application_infomation.json */,
+				E1FBBD782893ADF600053659 /* beginning_P_application_infomation.json */,
+				E161BA29289501F1002A2799 /* beginning_S_application_infomation.json */,
 				E1FBBD6E28937FF000053659 /* beginning_T_application_infomation.json */,
+				E161BA2B289533D9002A2799 /* beginning_U_application_infomation.json */,
 				E1FBBD72289382A700053659 /* beginning_Y_application_infomation.json */,
+				E161BA2D28953A51002A2799 /* beginning_Z_application_infomation.json */,
+				E161BA272894FFC0002A2799 /* japanese_application_infomation.json */,
 				E152D14B28886A890043D6B8 /* CustomUnderLine.swift */,
 				E152D14D2888BD190043D6B8 /* NeumorphicStyle.swift */,
 				E1FBBD66288FB4F800053659 /* CustomButtonStyle.swift */,
@@ -305,12 +350,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13D2478283BDFEA0088E632 /* Preview Assets.xcassets in Resources */,
+				E1FBBD7B2893AFD500053659 /* beginning_D_application_infomation.json in Resources */,
+				E161BA2C289533D9002A2799 /* beginning_U_application_infomation.json in Resources */,
+				E1FBBD852893CE2300053659 /* beginning_K_application_infomation.json in Resources */,
 				E1FBBD712893825600053659 /* beginning_I_application_infomation.json in Resources */,
+				E1FBBD7D2893B27A00053659 /* beginning_C_application_infomation.json in Resources */,
 				E152D14A28885DB00043D6B8 /* Color.xcassets in Resources */,
+				E1FBBD7F2893B98300053659 /* beginning_F_application_infomation.json in Resources */,
+				E1FBBD7528939F1F00053659 /* beginning_A_application_infomation.json in Resources */,
 				E112DC882858FB61005D7930 /* genuine_application_infomation.json in Resources */,
+				E161BA282894FFC0002A2799 /* japanese_application_infomation.json in Resources */,
 				E1FBBD6F28937FF000053659 /* beginning_T_application_infomation.json in Resources */,
+				E1FBBD812893BBF700053659 /* beginning_E_application_infomation.json in Resources */,
 				E13D2475283BDFEA0088E632 /* Assets.xcassets in Resources */,
+				E161BA2A289501F1002A2799 /* beginning_S_application_infomation.json in Resources */,
+				E1FBBD872893D2B700053659 /* beginning_M_application_infomation.json in Resources */,
+				E1FBBD792893ADF600053659 /* beginning_P_application_infomation.json in Resources */,
+				E1FBBD832893BEBE00053659 /* beginning_G_application_infomation.json in Resources */,
+				E1FBBD772893ABA500053659 /* beginning_B_application_infomation.json in Resources */,
 				E1FBBD73289382A700053659 /* beginning_Y_application_infomation.json in Resources */,
+				E161BA2E28953A51002A2799 /* beginning_Z_application_infomation.json in Resources */,
+				E1FBBD892893D5E600053659 /* beginning_N_application_infomation.json in Resources */,
 				E1FBBD6D28937F6700053659 /* beginning_L_application_infomation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -68,7 +68,7 @@ struct CreateURLHelpView: View {
                 .padding(.leading)
                 .padding(.trailing)
                 HStack {
-                    Text("6. 「アプリURL」欄に調べたURLスキームを入力し「作成」ボタンをタップ。")
+                    Text("6. 「アプリURL」欄に調べたURLスキーム（「://」は不要です）を入力し「作成」ボタンをタップ。")
                     Spacer()
                 }
                 .padding(.top)

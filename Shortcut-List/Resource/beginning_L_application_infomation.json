@@ -2,5 +2,9 @@
     {
         "app_title" : "Line",
         "app_url" : "line"
+    },
+    {
+        "app_title" : "Lineマンガ",
+        "app_url" : "linemanga"
     }
 ]

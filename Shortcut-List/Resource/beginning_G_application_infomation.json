@@ -1,0 +1,48 @@
+[
+    {
+        "app_title" : "GIFクラッカー",
+        "app_url" : "GIFCracker"
+    },
+    {
+        "app_title" : "GIFグリッド",
+        "app_url" : "GIFGrid"
+    },
+    {
+        "app_title" : "GIFトースター",
+        "app_url" : "GIFToaster"
+    },
+    {
+        "app_title" : "Gmail",
+        "app_url" : "googlegmail"
+    },
+    {
+        "app_title" : "Google Chat",
+        "app_url" : "com.google.chat"
+    },
+    {
+        "app_title" : "Google Classromm",
+        "app_url" : "googleclassroom"
+    },
+    {
+        "app_title" : "Google Meet",
+        "app_url" : "gmeet"
+    },
+    {
+        "app_title" : "Googleカレンダー",
+        "app_url" : "vnd.google.calendar://"
+    },
+    {
+        "app_title" : "Googleドライブ",
+        "app_url" : "googledrive-v3"
+    },
+    {
+        "app_title" : "Googleマップ",
+        "app_url" : "googlemaps"
+    },
+    {
+        "app_title" : "Google翻訳",
+        "app_url" : "googletranslate"
+    }
+]
+
+
