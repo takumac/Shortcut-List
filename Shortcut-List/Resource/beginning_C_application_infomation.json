@@ -1,5 +1,17 @@
 [
     {
+        "app_title" : "CALC Swift",
+        "app_url" : "calcswift"
+    },
+    {
+        "app_title" : "Chatwork",
+        "app_url" : "chatwork"
+    },
+    {
+        "app_title" : "Calcbot 2",
+        "app_url" : "calcbot"
+    },
+    {
         "app_title" : "Canva",
         "app_url" : "wxee691647f86b21b6"
     }

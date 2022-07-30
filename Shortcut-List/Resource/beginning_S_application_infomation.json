@@ -9,6 +9,22 @@
         "app_url" : "slack"
     },
     {
+        "app_title" : "Sleep Meister",
+        "app_url" : "sleepmeisterlite"
+    },
+    {
+        "app_title" : "Sleep Cycle",
+        "app_url" : "sleepcycle"
+    },
+    {
+        "app_title" : "Sleepzy",
+        "app_url" : "sleepzy"
+    },
+    {
+        "app_title" : "SmartNews",
+        "app_url" : "smartnews"
+    },
+    {
         "app_title" : "SNOW",
         "app_url" : "snowme"
     },

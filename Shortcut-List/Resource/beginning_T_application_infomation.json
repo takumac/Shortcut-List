@@ -8,6 +8,10 @@
         "app_url" : "timetree"
     },
     {
+        "app_title" : "Trello",
+        "app_url" : "db-vwkoojc9z16cwv3"
+    },
+    {
         "app_title" : "Twitter",
         "app_url" : "twitter"
     }

@@ -1,5 +1,9 @@
 [
     {
+        "app_title" : "GeoGebra科学計算用電卓",
+        "app_url" : "org.geogebra.ios.scicalc"
+    },
+    {
         "app_title" : "GIFクラッカー",
         "app_url" : "GIFCracker"
     },
@@ -26,6 +30,10 @@
     {
         "app_title" : "Google Meet",
         "app_url" : "gmeet"
+    },
+    {
+        "app_title" : "Google ToDo",
+        "app_url" : "googletasks"
     },
     {
         "app_title" : "Googleカレンダー",

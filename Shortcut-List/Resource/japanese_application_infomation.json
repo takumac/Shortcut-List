@@ -1,0 +1,46 @@
+[
+    {
+        "app_title" : "1 Timer",
+        "app_url" : "luyxvoicetimer"
+    },
+    {
+        "app_title" : "ぐるなび",
+        "app_url" : "gnaviapp"
+    },
+    {
+        "app_title" : "じゃらん",
+        "app_url" : "jalan"
+    },
+    {
+        "app_title" : "食べログ",
+        "app_url" : "tabelog-v2"
+    },
+    {
+        "app_title" : "乗換案内",
+        "app_url" : "NrkjFree"
+    },
+    {
+        "app_title" : "乗換NAVITIME",
+        "app_url" : "navitimetransfer"
+    },
+    {
+        "app_title" : "ホットペッパーグルメ",
+        "app_url" : "jp.recruit.hotpepper.gourmet"
+    },
+    {
+        "app_title" : "ホットペッパービューティー",
+        "app_url" : "hotpepperbeauty-hair"
+    },
+    {
+        "app_title" : "メルカリ",
+        "app_url" : "mercari"
+    },
+    {
+        "app_title" : "楽天市場",
+        "app_url" : "rakuten"
+    },
+    {
+        "app_title" : "ヤフオク",
+        "app_url" : "yjauctions"
+    }
+]
