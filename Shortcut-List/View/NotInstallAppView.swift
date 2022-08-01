@@ -25,17 +25,10 @@ struct NotInstallAppView: View {
             .padding(.leading)
             .padding(.trailing)
             Form {
-                Section("iOS14以降") {
+                Section("確認方法") {
                     Text("1. ホーム画面の一番右のホーム画面へ移動")
                     Text("2. もう一度右にスワイプしAppライブラリを表示")
                     Text("3. 上部の検索バーに対象のアプリケーション名を入力")
-                    Text("4. 該当のアプリケーションが表示されていなければ未インストールとなります。")
-                }
-                .textCase(.none)
-                Section("iOS13以前") {
-                    Text("1. 【設定】アプリを起動")
-                    Text("2. 「一般」を選択")
-                    Text("3. 「iPhoneストレージ」を選択")
                     Text("4. 該当のアプリケーションが表示されていなければ未インストールとなります。")
                 }
                 .textCase(.none)
